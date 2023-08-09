@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="MIT"
+
+[[mods]]
+modId="dcmexpansion"
+version="0.6.1"
+displayName="DCM Expansion"
+logoFile="dcmexpansion.png"
+credits="DCM-Modpack, Kzeroko"
+authors="Kzeroko"
+description='''
+Mod that adds contents to DCM modpack.
+'''
+
+[[dependencies.dcmexpansion]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dcmexpansion]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"

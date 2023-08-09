@@ -1,0 +1,32 @@
+{
+  "item.dcmexpansion.adrenaline": "Adrenaline Syringe",
+  "item.dcmexpansion.bandage_pro": "Direct Medical Kit",
+  "item.dcmexpansion.modernmedkit": "Modern Medical Device",
+  "item.dcmexpansion.firstaid_kit": "First-Aid Kit",
+  "item.dcmexpansion.antiinfection_serum": "Anti-Infection Serum",
+
+  "item.dcmexpansion.waterbottle_filled": "Water Bottle",
+  "item.dcmexpansion.waterbottle_empty": "Empty Water Bottle",
+
+  "item.dcmexpansion.plasma_engine": "Plasma Aircraft Engine",
+  "item.dcmexpansion.enhanced_armor": "Enhanced Aircraft Armor Plate",
+
+  "effect.dcmexpansion.anti_infection": "Anti-Infection",
+
+  "itemGroup.dcmexpansion.healingItems": "DCM Expansion-Healing",
+  "itemGroup.dcmexpansion.modIntegrationItems": "DCM Expansion-Mod Integrations",
+  "itemGroup.dcmexpansion.foodsAndDrinks": "DCM Expansion-Foods & Drinks",
+
+  "tooltip.dcmexpansion.adrenaline": "Grants Absorption & Speed after consume",
+  "tooltip.dcmexpansion.firstaid_kit": "Heals %s% of max health after consume",
+  "tooltip.dcmexpansion.modernmedkit": "Grants Resistance after consume",
+  "tooltip.dcmexpansion.antiinfection_serum": "Grants Anti-Infection and Hunger after consume",
+
+  "config.dcmexpansion.firstAidKitHP": "First-Aid Kit|Heal percentage",
+  "config.dcmexpansion.modernMedkitHP": "Modern Medical Device|Heal percentage",
+  "config.dcmexpansion.modernMedkitResistanceSeconds": "Modern Medical Device|Resistance (seconds)",
+  "config.dcmexpansion.adrenalineAbsorptionSeconds": "Adrenaline Syringe|Absorption (seconds)",
+  "config.dcmexpansion.adrenalineSpeedSeconds": "Adrenaline Syringe|Speed (seconds)",
+  "config.dcmexpansion.serumHungerSeconds": "Anti-Infection Serum|Hunger (seconds)",
+  "config.dcmexpansion.serumAntiInfectionSeconds": "Anti-Infection Serum|Anti-Infection (seconds)"
+}

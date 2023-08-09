@@ -1,0 +1,32 @@
+{
+  "item.dcmexpansion.adrenaline": "肾上腺素",
+  "item.dcmexpansion.bandage_pro": "指向型医疗设备",
+  "item.dcmexpansion.modernmedkit": "现代化急救包",
+  "item.dcmexpansion.firstaid_kit": "急救包",
+  "item.dcmexpansion.antiinfection_serum": "感染抗体注射器",
+
+  "item.dcmexpansion.waterbottle_filled": "矿泉水瓶",
+  "item.dcmexpansion.waterbottle_empty": "空的矿泉水瓶",
+
+  "item.dcmexpansion.plasma_engine": "等离子飞行引擎",
+  "item.dcmexpansion.enhanced_armor": "飞行专精护甲板",
+
+  "effect.dcmexpansion.anti_infection": "感染抗体",
+
+  "itemGroup.dcmexpansion.healingItems": "DCM扩展-治疗物品",
+  "itemGroup.dcmexpansion.modIntegrationItems": "DCM扩展-模组兼容",
+  "itemGroup.dcmexpansion.foodsAndDrinks": "DCM扩展-饮食",
+
+  "tooltip.dcmexpansion.adrenaline": "使用后获得伤害吸收与速度",
+  "tooltip.dcmexpansion.firstaid_kit": "使用后治疗最大生命值的%s%%",
+  "tooltip.dcmexpansion.modernmedkit": "使用后获得抗性提升",
+  "tooltip.dcmexpansion.antiinfection_serum": "使用后获得感染抗体与饥饿",
+
+  "config.dcmexpansion.firstAidKitHP": "急救包|治疗百分比",
+  "config.dcmexpansion.modernMedkitHP": "现代化急救包|治疗百分比",
+  "config.dcmexpansion.modernMedkitResistanceSeconds": "现代化急救包|抗性提升时效（秒）",
+  "config.dcmexpansion.adrenalineAbsorptionSeconds": "肾上腺素|伤害吸收时效（秒）",
+  "config.dcmexpansion.adrenalineSpeedSeconds": "肾上腺素|速度时效（秒）",
+  "config.dcmexpansion.serumHungerSeconds": "感染抗体注射器|饥饿时效（秒）",
+  "config.dcmexpansion.serumAntiInfectionSeconds": "感染抗体注射器|感染抗体时效（秒）"
+}

@@ -1,0 +1,16 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"compatibilityLevel": "JAVA_17",
+	"refmap": "dcmexpansion.mixin.refmap.json",
+	"package": "net.kzeroko.dcmexpansion.mixin",
+	"mixins": [
+		"InfectImmuneMixin",
+		"InfectionMixin"
+	],
+	"client": [
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

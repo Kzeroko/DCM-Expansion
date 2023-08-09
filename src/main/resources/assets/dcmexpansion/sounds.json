@@ -1,0 +1,34 @@
+{
+   "item.adrenaline.open": {
+      "subtitle": "subtitle.dcmexpansion.adrenaline_open",
+      "sounds": [
+         { "name": "dcmexpansion:item/adrenaline_open" }
+      ]
+   },
+   "item.adrenaline.inject": {
+      "subtitle": "subtitle.dcmexpansion.adrenaline_inject",
+      "sounds": [
+         { "name": "dcmexpansion:item/adrenaline_inject" }
+      ]
+   },
+   "item.modernmedkit.1": {
+      "sounds": [
+         { "name": "dcmexpansion:item/modernmedkit_1" }
+      ]
+   },
+   "item.modernmedkit.2": {
+      "sounds": [
+         { "name": "dcmexpansion:item/modernmedkit_2" }
+      ]
+   },
+   "item.modernmedkit.3": {
+      "sounds": [
+         { "name": "dcmexpansion:item/modernmedkit_3" }
+      ]
+   },
+   "item.modernmedkit.4": {
+      "sounds": [
+         { "name": "dcmexpansion:item/modernmedkit_4" }
+      ]
+   }
+}
