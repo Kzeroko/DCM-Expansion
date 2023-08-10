@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="dcmexpansion"
-version="0.6.1"
+version="0.6.2"
 displayName="DCM Expansion"
 logoFile="dcmexpansion.png"
 credits="DCM-Modpack, Kzeroko"
@@ -23,5 +23,35 @@ Mod that adds contents to DCM modpack.
     modId="minecraft"
     mandatory=true
     versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dcmexpansion]]
+    modId="atlaslib"
+    mandatory=true
+    versionRange="[1.1.7a,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dcmexpansion]]
+    modId="hordes"
+    mandatory=true
+    versionRange="[1.1.5e,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dcmexpansion]]
+    modId="firstaid"
+    mandatory=true
+    versionRange="[1.11.1,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dcmexpansion]]
+    modId="immersive_aircraft"
+    mandatory=true
+    versionRange="[0.4.2+1.18.2,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dcmexpansion]]
+    modId="framework"
+    mandatory=true
+    versionRange="[0.4.3,)"
     ordering="NONE"
     side="BOTH"
