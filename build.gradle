@@ -3,6 +3,8 @@ buildscript {
         maven { url = 'https://maven.minecraftforge.net' }
         maven { url = 'https://maven.parchmentmc.org' }
         maven { url = 'https://repo.spongepowered.org/maven' }
+        maven { url = 'https://jitpack.io' }
+        maven { url = 'https://modmaven.dev/' }
 
         mavenCentral()
     }
@@ -22,7 +24,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '0.6.2'
+version = '0.7.0'
 group = 'net.kzeroko.dcmexpansion'
 archivesBaseName = 'dcmexpansion'
 
@@ -179,6 +181,19 @@ dependencies {
 
     // Immersive Aircraft
     implementation fg.deobf(files("../DCM-expansion/externalmods/immersive_aircraft-0.4.2+1.18.2-forge.jar"))
+
+    // PNCR
+    implementation fg.deobf('curse.maven:pneumaticcraft-repressurized-281849:4704091')
+
+    // Mekanism
+    compileOnly "mekanism:Mekanism:${mek_version}:api"
+    runtimeOnly fg.deobf("mekanism:Mekanism:${mek_version}")
+    runtimeOnly fg.deobf("mekanism:Mekanism:${mek_version}:additions")
+    runtimeOnly fg.deobf("mekanism:Mekanism:${mek_version}:generators")
+    runtimeOnly fg.deobf("mekanism:Mekanism:${mek_version}:tools")
+
+    // Immersive Engineering
+    implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${ie_version}")
 
     // Mixin
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

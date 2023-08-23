@@ -1,4 +1,4 @@
-package net.kzeroko.dcmexpansion.mixin;
+package net.kzeroko.dcmexpansion.mixin.common;
 
 import net.kzeroko.dcmexpansion.registry.DcmEffects;
 import net.minecraft.world.effect.MobEffectInstance;

@@ -3,6 +3,8 @@ package net.kzeroko.dcmexpansion;
 import com.mojang.logging.LogUtils;
 import net.kzeroko.dcmexpansion.config.DcmExpansionConfig;
 import net.kzeroko.dcmexpansion.registry.*;
+import net.kzeroko.dcmexpansion.registry.modIntegration.*;
+import net.kzeroko.dcmexpansion.util.RefUtil;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -14,6 +16,7 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -33,7 +36,7 @@ public class DcmExpansion
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final CreativeModeTab INTEGRATION_GROUP = new CreativeModeTab(MOD_ID + "." + "modIntegrationItems") {
         public @NotNull ItemStack makeIcon() {
-            return new ItemStack(DcmAircraftItems.PLASMA_ENGINE.get());
+            return new ItemStack(DcmIntegrationItems.SCREEN_COMPONENT.get());
         }
     };
     public static final CreativeModeTab HEALING_GROUP = new CreativeModeTab(MOD_ID + "." + "healingItems") {
@@ -43,7 +46,7 @@ public class DcmExpansion
     };
     public static final CreativeModeTab FOODS_AND_DRINKS = new CreativeModeTab(MOD_ID + "." + "foodsAndDrinks") {
         public @NotNull ItemStack makeIcon() {
-            return new ItemStack(DcmDailyItems.WATERBOTTLE_FILLED.get());
+            return new ItemStack(DcmMiscItems.WATERBOTTLE_FILLED.get());
         }
     };
 
@@ -58,14 +61,24 @@ public class DcmExpansion
         eventBus.addListener(this::enqueueIMC);
         eventBus.addListener(this::processIMC);
 
-        eventBus.addGenericListener(Item.class, this::registerItems);
+        eventBus.addGenericListener(Item.class, this::registerFirstAidItems);
+
         DcmSounds.REGISTER.register(eventBus);
         DcmHealingItems.REGISTER.register(eventBus);
-        DcmDailyItems.REGISTER.register(eventBus);
-        DcmAircraftItems.REGISTER.register(eventBus);
+        DcmMiscItems.REGISTER.register(eventBus);
+        DcmIntegrationItems.REGISTER.register(eventBus);
         DcmEffects.REGISTER.register(eventBus);
 
+        if (ModList.get().isLoaded(RefUtil.immersive_aircraft_MODID)) {
+            ImmersiveAircraftItems.REGISTER.register(eventBus);
+        }
+
+        if (ModList.get().isLoaded(RefUtil.pneumaticcraft_MODID)) {
+            PneumaticCraftItems.REGISTER.register(eventBus);
+        }
+
         modLoadingContext.registerConfig(ModConfig.Type.SERVER, DcmExpansionConfig.serverSpec);
+        modLoadingContext.registerConfig(ModConfig.Type.CLIENT, DcmExpansionConfig.clientSpec);
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -102,7 +115,7 @@ public class DcmExpansion
         }
     }
 
-    public void registerItems(RegistryEvent.Register<Item> event) {
+    public void registerFirstAidItems(RegistryEvent.Register<Item> event) {
         DcmFirstaidItems.init(event.getRegistry());
     }
 }

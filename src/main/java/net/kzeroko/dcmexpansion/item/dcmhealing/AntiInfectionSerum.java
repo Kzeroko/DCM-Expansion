@@ -1,4 +1,4 @@
-package net.kzeroko.dcmexpansion.item.healing;
+package net.kzeroko.dcmexpansion.item.dcmhealing;
 
 import net.kzeroko.dcmexpansion.DcmExpansion;
 import net.kzeroko.dcmexpansion.config.DcmExpansionConfig;
@@ -19,6 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.smileycorp.hordes.common.infection.HordesInfection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,6 +41,10 @@ public class AntiInfectionSerum extends Item {
                     server.serumHungerSeconds.get() * 20,1,false,false,false));
             le.addEffect(new MobEffectInstance(DcmEffects.ANTI_INFECTION.get(),
                     server.serumAntiInfectionSeconds.get() * 20,0,false,false,true));
+
+            if (le.hasEffect(HordesInfection.INFECTED.get()) && server.serumAntiInfectionCure.get()) {
+                le.removeEffect(HordesInfection.INFECTED.get());
+            }
 
             world.playSound(null, le.getX(), le.getY(), le.getZ(),
                     DcmSounds.ADRENALINE_INJECT.get(), SoundSource.PLAYERS, 0.8F, 1.0F);

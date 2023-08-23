@@ -1,4 +1,4 @@
-package net.kzeroko.dcmexpansion.item.healing;
+package net.kzeroko.dcmexpansion.item.dcmhealing;
 
 import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
 import ichttt.mods.firstaid.common.util.CommonUtils;

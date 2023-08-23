@@ -10,6 +10,8 @@
 
   "item.dcmexpansion.plasma_engine": "等离子飞行引擎",
   "item.dcmexpansion.enhanced_armor": "飞行专精护甲板",
+  "item.dcmexpansion.screen_component": "屏幕组件",
+  "item.dcmexpansion.compressed_battery": "空压电池",
 
   "effect.dcmexpansion.anti_infection": "感染抗体",
 
@@ -21,6 +23,11 @@
   "tooltip.dcmexpansion.firstaid_kit": "使用后治疗最大生命值的%s%%",
   "tooltip.dcmexpansion.modernmedkit": "使用后获得抗性提升",
   "tooltip.dcmexpansion.antiinfection_serum": "使用后获得感染抗体与饥饿",
+  "tooltip.dcmexpansion.compressed_battery": "手持空压电池Shift+右键为副手的平板电脑充能",
+  "tooltip.dcmexpansion.compressed_battery_amount": "剩余%s/5次使用次数",
+  "tooltip.dcmexpansion.compressed_battery_amount_na": "剩余5/5次使用次数",
+
+  "message.dcmexpansion.cb_outofuse": "这块电池已经没有任何充能了",
 
   "config.dcmexpansion.firstAidKitHP": "急救包|治疗百分比",
   "config.dcmexpansion.modernMedkitHP": "现代化急救包|治疗百分比",
@@ -28,5 +35,9 @@
   "config.dcmexpansion.adrenalineAbsorptionSeconds": "肾上腺素|伤害吸收时效（秒）",
   "config.dcmexpansion.adrenalineSpeedSeconds": "肾上腺素|速度时效（秒）",
   "config.dcmexpansion.serumHungerSeconds": "感染抗体注射器|饥饿时效（秒）",
-  "config.dcmexpansion.serumAntiInfectionSeconds": "感染抗体注射器|感染抗体时效（秒）"
+  "config.dcmexpansion.serumAntiInfectionSeconds": "感染抗体注射器|感染抗体时效（秒）",
+  "config.dcmexpansion.serumAntiInfectionCure": "感染抗体注射器治愈感染",
+  "config.dcmexpansion.compressedBatteryCharge": "空压电池充能量",
+
+  "config.dcmexpansion.showPlayerNameplate": "渲染玩家铭牌"
 }

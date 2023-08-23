@@ -1,7 +1,7 @@
 package net.kzeroko.dcmexpansion.registry;
 
 import net.kzeroko.dcmexpansion.DcmExpansion;
-import net.kzeroko.dcmexpansion.item.healing.*;
+import net.kzeroko.dcmexpansion.item.dcmhealing.*;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.*;
 

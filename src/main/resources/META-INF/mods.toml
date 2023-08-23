@@ -4,7 +4,7 @@ license="MIT"
 
 [[mods]]
 modId="dcmexpansion"
-version="0.6.2"
+version="0.7.0"
 displayName="DCM Expansion"
 logoFile="dcmexpansion.png"
 credits="DCM-Modpack, Kzeroko"
@@ -44,14 +44,20 @@ Mod that adds contents to DCM modpack.
     ordering="NONE"
     side="BOTH"
 [[dependencies.dcmexpansion]]
-    modId="immersive_aircraft"
+    modId="framework"
     mandatory=true
+    versionRange="[0.4.3,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dcmexpansion]]
+    modId="immersive_aircraft"
+    mandatory=false
     versionRange="[0.4.2+1.18.2,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.dcmexpansion]]
-    modId="framework"
-    mandatory=true
-    versionRange="[0.4.3,)"
+    modId="pneumaticcraft"
+    mandatory=false
+    versionRange="[1.18.2-3.6.1-29,)"
     ordering="NONE"
     side="BOTH"

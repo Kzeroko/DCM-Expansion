@@ -18,8 +18,7 @@ public class DcmSounds
 	public static final RegistryObject<SoundEvent> MODERNMEDKIT_3 = register("item.modernmedkit.3");
 	public static final RegistryObject<SoundEvent> MODERNMEDKIT_4 = register("item.modernmedkit.4");
 
-	private static RegistryObject<SoundEvent> register(String key)
-	{
+	private static RegistryObject<SoundEvent> register(String key) {
 		return REGISTER.register(key, () -> new SoundEvent(new ResourceLocation(DcmExpansion.MOD_ID, key)));
 	}
 }

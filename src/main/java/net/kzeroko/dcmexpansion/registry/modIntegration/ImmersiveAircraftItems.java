@@ -1,4 +1,4 @@
-package net.kzeroko.dcmexpansion.registry;
+package net.kzeroko.dcmexpansion.registry.modIntegration;
 
 import immersive_aircraft.item.UpgradeItem;
 import immersive_aircraft.item.upgrade.AircraftStat;
@@ -9,9 +9,11 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class DcmAircraftItems {
+public class ImmersiveAircraftItems {
 
     public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, DcmExpansion.MOD_ID);
+
+    /** Immersive Aircraft */
     public static final RegistryObject<Item> PLASMA_ENGINE = REGISTER.register( "plasma_engine", () ->
             new UpgradeItem(new Item.Properties().stacksTo(8).tab(DcmExpansion.INTEGRATION_GROUP),
             (new AircraftUpgrade()).set(AircraftStat.STRENGTH, 1.25F).set(AircraftStat.FUEL, -0.15F).set(AircraftStat.ACCELERATION, 0.35F)));

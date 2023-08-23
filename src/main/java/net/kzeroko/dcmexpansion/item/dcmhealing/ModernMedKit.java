@@ -1,4 +1,4 @@
-package net.kzeroko.dcmexpansion.item.healing;
+package net.kzeroko.dcmexpansion.item.dcmhealing;
 
 import net.kzeroko.dcmexpansion.config.DcmExpansionConfig;
 import net.kzeroko.dcmexpansion.item.KitItem;
