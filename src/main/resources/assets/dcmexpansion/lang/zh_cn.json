@@ -28,6 +28,7 @@
   "tooltip.dcmexpansion.compressed_battery_amount_na": "剩余5/5次使用次数",
 
   "message.dcmexpansion.cb_outofuse": "这块电池已经没有任何充能了",
+  "message.dcmexpansion.horde_disable_pocket_block": "检测到有尸潮发生，已开启隔离",
 
   "config.dcmexpansion.firstAidKitHP": "急救包|治疗百分比",
   "config.dcmexpansion.modernMedkitHP": "现代化急救包|治疗百分比",

@@ -3,7 +3,8 @@ package net.kzeroko.dcmexpansion;
 import com.mojang.logging.LogUtils;
 import net.kzeroko.dcmexpansion.config.DcmExpansionConfig;
 import net.kzeroko.dcmexpansion.registry.*;
-import net.kzeroko.dcmexpansion.registry.modIntegration.*;
+import net.kzeroko.dcmexpansion.registry.modIntegration.ImmersiveAircraftItems;
+import net.kzeroko.dcmexpansion.registry.modIntegration.PneumaticCraftItems;
 import net.kzeroko.dcmexpansion.util.RefUtil;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -30,8 +31,7 @@ import org.slf4j.Logger;
 import java.util.stream.Collectors;
 
 @Mod("dcmexpansion")
-public class DcmExpansion
-{
+public class DcmExpansion {
     public static final String MOD_ID = "dcmexpansion";
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final CreativeModeTab INTEGRATION_GROUP = new CreativeModeTab(MOD_ID + "." + "modIntegrationItems") {

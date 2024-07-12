@@ -28,6 +28,7 @@
   "tooltip.dcmexpansion.compressed_battery_amount_na": "5/5 uses left",
 
   "message.dcmexpansion.cb_outofuse": "This battery has no charges left",
+  "message.dcmexpansion.horde_disable_pocket_block": "Horde invasion detected, quarantine activated",
 
   "config.dcmexpansion.firstAidKitHP": "First-Aid Kit|Heal percentage",
   "config.dcmexpansion.modernMedkitHP": "Modern Medical Device|Heal percentage",

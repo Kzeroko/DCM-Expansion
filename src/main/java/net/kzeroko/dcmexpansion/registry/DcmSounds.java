@@ -10,7 +10,6 @@ import net.minecraftforge.registries.RegistryObject;
 public class DcmSounds
 {
 	public static final DeferredRegister<SoundEvent> REGISTER = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, DcmExpansion.MOD_ID);
-
 	public static final RegistryObject<SoundEvent> ADRENALINE_OPEN = register("item.adrenaline.open");
 	public static final RegistryObject<SoundEvent> ADRENALINE_INJECT = register("item.adrenaline.inject");
 	public static final RegistryObject<SoundEvent> MODERNMEDKIT_1 = register("item.modernmedkit.1");

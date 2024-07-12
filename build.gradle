@@ -24,7 +24,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '0.7.0'
+version = '0.7.1+1.18.2'
 group = 'net.kzeroko.dcmexpansion'
 archivesBaseName = 'dcmexpansion'
 
@@ -147,7 +147,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.2.0'
+    minecraft "net.minecraftforge:forge:1.18.2-${forge_version}"
 
     // Cloth Config
     compileOnly fg.deobf("me.shedaniel.cloth:cloth-config-forge:${cloth_config_version}")
@@ -164,7 +164,7 @@ dependencies {
     implementation fg.deobf("curse.maven:first-aid-276837:3860237")
 
     // Hordes
-    runtimeOnly fg.deobf(files("../DCM-expansion/externalmods/Atlas-Lib-1.18.2-1.1.8.jar"))
+    implementation fg.deobf(files("../DCM-expansion/externalmods/Atlas-Lib-1.18.2-1.1.8.jar"))
     implementation fg.deobf(files("../DCM-expansion/externalmods/The-Hordes-1.18.2-1.1.6a.jar"))
 
     // Better Combat
@@ -194,6 +194,9 @@ dependencies {
 
     // Immersive Engineering
     implementation fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${ie_version}")
+
+    // Security Craft
+    implementation fg.deobf('curse.maven:security-craft-64760:5424858')
 
     // Mixin
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

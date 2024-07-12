@@ -5,8 +5,8 @@
   "refmap": "dcmexpansion.mixin.refmap.json",
   "package": "net.kzeroko.dcmexpansion.mixin",
   "mixins": [
-    "common.InfectImmuneMixin",
-    "common.InfectionMixin"
+    "common.BlockPocketWallBlockMixin",
+    "common.LivingEntityMixin"
   ],
   "client": [
     "client.EntityRendererMixin"

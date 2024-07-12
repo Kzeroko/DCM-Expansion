@@ -69,10 +69,11 @@ public class CompressedBattery extends Item {
     private static void addAirToTablet(ItemStack stack) {
         DcmExpansionConfig.ServerSide server = DcmExpansionConfig.SERVER_SIDE;
         CompoundTag pncr_air = stack.getTag();
-        assert pncr_air != null;
-        int airValue = pncr_air.getInt("pneumaticcraft:air");
-        pncr_air.putInt("pneumaticcraft:air", airValue + server.compressedBatteryCharge.get());
-        stack.setTag(pncr_air);
+        if (pncr_air != null) {
+            int airValue = pncr_air.getInt("pneumaticcraft:air");
+            pncr_air.putInt("pneumaticcraft:air", airValue + server.compressedBatteryCharge.get());
+            stack.setTag(pncr_air);
+        }
     }
 
     @Override
