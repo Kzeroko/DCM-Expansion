@@ -4,7 +4,7 @@
 
 [![](https://img.shields.io/badge/Curseforge-Available-blue)](https://legacy.curseforge.com/minecraft/mc-mods/dcm-expansion)
 
-### This is a mod written for my private modpack DeceasedCraft:Modified, modified from TqLxQuanZ's [DeceasedCraft](https://www.curseforge.com/minecraft/modpacks/deceasedcraft)
+### This is a mod written for my private modpack DeceasedCraft:Modified(DCM), modified from TqLxQuanZ's [DeceasedCraft](https://www.curseforge.com/minecraft/modpacks/deceasedcraft)
 
 <br>
 
@@ -12,19 +12,21 @@
 
 This mod requires [First Aid](https://legacy.curseforge.com/minecraft/mc-mods/first-aid) to run
 
-<img src="https://media.forgecdn.net/avatars/116/454/636398519365467447.png"  width="50" height="50">
+<img src="imgs/modicon_firstaid.png"  width="50" height="50">
 
 This mod requires [Atlas Lib](https://legacy.curseforge.com/minecraft/mc-mods/atlas-lib) and [The Hordes](https://legacy.curseforge.com/minecraft/mc-mods/the-hordes) to run
 
-<img src="https://media.forgecdn.net/avatars/544/921/637877293053496737.png"  width="50" height="50">
+<img src="imgs/modicon_thehordes.png"  width="50" height="50">
 
 This mod requires [Framework](https://legacy.curseforge.com/minecraft/mc-mods/framework) for custom models
 
-<img src="https://media.forgecdn.net/avatars/458/473/637732745981586814.png"  width="50" height="50">
+<img src="imgs/modicon_framework.png"  width="50" height="50">
 
-This mod requires [Immersive Aircraft](https://legacy.curseforge.com/minecraft/mc-mods/immersive-aircraft) to run
+The rest are all optional dependencies
 
-<img src="https://media.forgecdn.net/avatars/656/842/638056986831428322.png"  width="50" height="50">
+<img src="imgs/modicon_immersiveaircraft.png"  width="50" height="50"> <img src="imgs/modicon_pncr.png" width="50" height="50"> <img src="imgs/modicon_weather2.png" width="50" height="50">
+
+<img src="imgs/modicon_mekanism.png" width="50" height="50"> <img src="imgs/modicon_coldsweat.png" width="50" height="50">
 
 </div>
 
@@ -33,15 +35,15 @@ This mod requires [Immersive Aircraft](https://legacy.curseforge.com/minecraft/m
 ## Contents and Features
 
 - You can configure this mod in your save file, located in <span style="text-decoration: underline;">*serverconfig/dcmexpansion-server.toml*
-- Medical related contents such as First-Aid kit, Adrenaline, Infection Serum etc.
-- Immersive Aircraft upgrades, well, pretty overpowered BTW.
-- Mod integration items, currently it only has a water bottle for thirst mods.
+- Medical related contents such as First-Aid kit, Adrenaline, Infection Serum etc
+- Immersive Aircraft upgrades with overpowered stats
+- Other mod integration items...
 
 ## Future plans?
 
-- Many mod-integration items(for custom crafting recipes) pretty much most of them for general pack-integration.
-- Mr.Crayfish's Gun mod or TAC addon, not much on my thought for the time period.
-- Plasma Weapons for Better Combat mod
+- Many mod-integration items (for custom crafting recipes) pretty much most of them for general pack-integration
+- TAC:Zero addon with custom items, I'm already working on it (custom guns will be from DooM Eternal series)
+- Plasma Melee Weapons for Better Combat mod
 
 </div>
 
