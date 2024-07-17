@@ -1,4 +1,4 @@
-package net.kzeroko.dcmexpansion.registry.modIntegration;
+package net.kzeroko.dcmexpansion.registry.modintegration;
 
 import immersive_aircraft.item.UpgradeItem;
 import immersive_aircraft.item.upgrade.AircraftStat;

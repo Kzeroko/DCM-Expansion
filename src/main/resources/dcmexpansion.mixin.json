@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "dcmexpansion.mixin.refmap.json",
   "package": "net.kzeroko.dcmexpansion.mixin",
+  "plugin": "net.kzeroko.dcmexpansion.mixin.DCMMixinPlugin",
   "mixins": [
     "common.BlockPocketWallBlockMixin",
     "common.LivingEntityMixin"

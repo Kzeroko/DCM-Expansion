@@ -30,5 +30,11 @@
       "sounds": [
          { "name": "dcmexpansion:item/modernmedkit_4" }
       ]
+   },
+   "item.weathertester.test": {
+      "subtitle": "subtitle.dcmexpansion.weathertester_test",
+      "sounds": [
+         { "name": "dcmexpansion:item/weather_tester" }
+      ]
    }
 }

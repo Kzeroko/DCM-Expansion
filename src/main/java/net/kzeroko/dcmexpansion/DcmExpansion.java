@@ -3,8 +3,7 @@ package net.kzeroko.dcmexpansion;
 import com.mojang.logging.LogUtils;
 import net.kzeroko.dcmexpansion.config.DcmExpansionConfig;
 import net.kzeroko.dcmexpansion.registry.*;
-import net.kzeroko.dcmexpansion.registry.modIntegration.ImmersiveAircraftItems;
-import net.kzeroko.dcmexpansion.registry.modIntegration.PneumaticCraftItems;
+import net.kzeroko.dcmexpansion.registry.modintegration.*;
 import net.kzeroko.dcmexpansion.util.RefUtil;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -75,6 +74,10 @@ public class DcmExpansion {
 
         if (ModList.get().isLoaded(RefUtil.pneumaticcraft_MODID)) {
             PneumaticCraftItems.REGISTER.register(eventBus);
+        }
+
+        if (ModList.get().isLoaded(RefUtil.weather2_MODID) && ModList.get().isLoaded(RefUtil.mekanism_MODID)) {
+            WeatherItems.REGISTER.register(eventBus);
         }
 
         modLoadingContext.registerConfig(ModConfig.Type.SERVER, DcmExpansionConfig.serverSpec);

@@ -12,6 +12,8 @@
   "item.dcmexpansion.enhanced_armor": "Enhanced Aircraft Armor Plate",
   "item.dcmexpansion.screen_component": "Screen Component",
   "item.dcmexpansion.compressed_battery": "Compressed Battery",
+  "item.dcmexpansion.weather_tester_normal": "Weather Tester (Normal)",
+  "item.dcmexpansion.weather_tester_elite": "Weather Tester (Elite)",
 
   "effect.dcmexpansion.anti_infection": "Anti-Infection",
 
@@ -26,9 +28,29 @@
   "tooltip.dcmexpansion.compressed_battery": "Shift+RightClick charges the tablet in offhand",
   "tooltip.dcmexpansion.compressed_battery_amount": "%s/5 uses left",
   "tooltip.dcmexpansion.compressed_battery_amount_na": "5/5 uses left",
+  "tooltip.dcmexpansion.weather_tester.cooldown": "Next scan in ",
+  "tooltip.dcmexpansion.weather_tester.range": "Range: ",
+  "tooltip.dcmexpansion.weather_tester.usage1": "Direct usage to get all weather data",
+  "tooltip.dcmexpansion.weather_tester.usage2": "SHIFT usage to get hazard weather data",
 
   "message.dcmexpansion.cb_outofuse": "This battery has no charges left",
   "message.dcmexpansion.horde_disable_pocket_block": "Horde invasion detected, quarantine activated",
+
+  "message.dcmexpansion.weather.cloudless_storm": "Cloudless",
+  "message.dcmexpansion.weather.real_storm": "Storm",
+  "message.dcmexpansion.weather.tornado_forming": "Tornado",
+  "message.dcmexpansion.weather.cyclone_forming": "Cyclone",
+  "message.dcmexpansion.weather.spinning": "Spinning",
+  "message.dcmexpansion.weather.tropical_cyclone": "Tropical Cyclone",
+  "message.dcmexpansion.weather.hurricane": "Hurricane",
+  "message.dcmexpansion.weather.sharknado": "Sharknado",
+  "message.dcmexpansion.weather.distance_storm": "Distance: %s Direction: %s",
+  "message.dcmexpansion.weather.no_storm": "No Storm",
+
+  "message.dcmexpansion.weather.direction.north": "North",
+  "message.dcmexpansion.weather.direction.south": "South",
+  "message.dcmexpansion.weather.direction.west": "West",
+  "message.dcmexpansion.weather.direction.east": "East",
 
   "config.dcmexpansion.firstAidKitHP": "First-Aid Kit|Heal percentage",
   "config.dcmexpansion.modernMedkitHP": "Modern Medical Device|Heal percentage",

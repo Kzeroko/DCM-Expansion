@@ -1,4 +1,4 @@
-package net.kzeroko.dcmexpansion.registry.modIntegration;
+package net.kzeroko.dcmexpansion.registry.modintegration;
 
 import net.kzeroko.dcmexpansion.DcmExpansion;
 import net.kzeroko.dcmexpansion.item.pncr.CompressedBattery;
