@@ -179,6 +179,8 @@ public class BPVestMedium extends DcmCurioItem implements ICurioRenderable {
 
             float multiplier = 1.0F;
 
+            if (event.isHeadShot()) return;
+
             if (curioVest.isEquippedBy(player)) {
                 curioVest.damageAllEquipped(player, 1);
 
