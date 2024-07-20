@@ -49,7 +49,9 @@ The rest are all OPTIONAL dependencies
 
 <div align="center">
 
-***These models are all made by me, please do not claim it yourself***
+***The ported TAC bullet-proof vests are originaly made by TAC team, I do not own any of them***
+
+***The rest of the models are all made by me, please do not claim it yourself***
 
 **You can use this mod in your modpack as long as you don't claim this mod yourself**
 

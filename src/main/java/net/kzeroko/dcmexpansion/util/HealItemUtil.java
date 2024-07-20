@@ -8,7 +8,7 @@ import net.minecraft.world.level.Level;
 
 public class HealItemUtil {
 
-    /** Play sound base on item's usage*/
+    /** Play sound base on item's usage, specifically for medkit items */
     public static void playMedKitSound(Player player, Level world) {
         int usage = player.getTicksUsingItem();
 

@@ -13,10 +13,10 @@ import net.kzeroko.dcmexpansion.util.EnergyUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -39,11 +39,13 @@ import java.util.List;
 public class WeatherTestItem extends ItemEnergized {
     private final int cooldowns;
     private final int scanDistance;
-    private final static int energyCostUsage = (int) EnergyUtil.feToJoules(100);
 
     public WeatherTestItem(double chargeRate, double capacity, int cooldowns, int scanDistance) {
-        super(()-> FloatingLong.createConst(chargeRate), ()-> FloatingLong.createConst(capacity),
-                (new Properties()).tab(DcmExpansion.INTEGRATION_GROUP).stacksTo(1));
+        super(
+                ()-> FloatingLong.createConst(EnergyUtil.convertEnergy(chargeRate, EnergyUtil.Type.FE, EnergyUtil.Type.J)),
+                ()-> FloatingLong.createConst(EnergyUtil.convertEnergy(capacity, EnergyUtil.Type.FE, EnergyUtil.Type.J)),
+                (new Properties()).tab(DcmExpansion.INTEGRATION_GROUP).stacksTo(1)
+        );
         this.cooldowns = cooldowns;
         this.scanDistance = scanDistance;
     }
@@ -55,7 +57,7 @@ public class WeatherTestItem extends ItemEnergized {
 
         IEnergyContainer energyContainer = StorageUtils.getEnergyContainer(heldStack, 0);
         FloatingLong energy = energyContainer == null ? FloatingLong.ZERO : energyContainer.getEnergy();
-        FloatingLong energyCost = FloatingLong.create(energyCostUsage);
+        FloatingLong energyCost = FloatingLong.create((int) EnergyUtil.convertEnergy(100, EnergyUtil.Type.FE, EnergyUtil.Type.J));
 
         if (!level.isClientSide() && energyContainer != null && !energy.isZero() && !energy.smallerThan(energyCost)) {
             Vec3 playerPos = player.position();
@@ -68,43 +70,54 @@ public class WeatherTestItem extends ItemEnergized {
                 stormAny = weatherManager.getClosestStormAny(playerPos, scanDistance);
             }
 
-            String message;
+            TranslatableComponent message;
 
             if (stormAny != null) {
                 Vec3 stormPos = stormAny.posGround;
                 double distance = playerPos.distanceTo(stormPos);
 
-                List<String> elements = new ArrayList<>();
+                List<Component> elements = new ArrayList<>();
 
-                if (stormAny.isCloudlessStorm()) elements.add(I18n.get("message.dcmexpansion.weather.cloudless_storm"));
-                if (stormAny.isRealStorm()) elements.add(I18n.get("message.dcmexpansion.weather.real_storm"));
-                if (stormAny.isTornadoFormingOrGreater()) elements.add(I18n.get("message.dcmexpansion.weather.tornado_forming"));
-                if (stormAny.isCycloneFormingOrGreater()) elements.add(I18n.get("message.dcmexpansion.weather.cyclone_forming"));
-                if (stormAny.isSpinning()) elements.add(I18n.get("message.dcmexpansion.weather.spinning"));
-                if (stormAny.isTropicalCyclone()) elements.add(I18n.get("message.dcmexpansion.weather.tropical_cyclone"));
-                if (stormAny.isHurricane()) elements.add(I18n.get("message.dcmexpansion.weather.hurricane"));
-                if (stormAny.isSharknado()) elements.add(I18n.get("message.dcmexpansion.weather.sharknado"));
+                if (stormAny.isCloudlessStorm()) elements.add(new TranslatableComponent("message.dcmexpansion.weather.cloudless_storm"));
+                if (stormAny.isRealStorm()) elements.add(new TranslatableComponent("message.dcmexpansion.weather.real_storm"));
+                if (stormAny.isTornadoFormingOrGreater()) elements.add(new TranslatableComponent("message.dcmexpansion.weather.tornado_forming"));
+                if (stormAny.isCycloneFormingOrGreater()) elements.add(new TranslatableComponent("message.dcmexpansion.weather.cyclone_forming"));
+                if (stormAny.isSpinning()) elements.add(new TranslatableComponent("message.dcmexpansion.weather.spinning"));
+                if (stormAny.isTropicalCyclone()) elements.add(new TranslatableComponent("message.dcmexpansion.weather.tropical_cyclone"));
+                if (stormAny.isHurricane()) elements.add(new TranslatableComponent("message.dcmexpansion.weather.hurricane"));
+                if (stormAny.isSharknado()) elements.add(new TranslatableComponent("message.dcmexpansion.weather.sharknado"));
 
                 double dx = stormPos.x - playerPos.x;
                 double dz = stormPos.z - playerPos.z;
                 String directionS = getCardinalDirection(dx, dz);
 
-                message = I18n.get("message.dcmexpansion.weather.distance_storm",
+                TranslatableComponent distanceComponent = new TranslatableComponent("message.dcmexpansion.weather.distance_storm",
                         String.format("%.2f", distance) + "M",
-                        I18n.get("message.dcmexpansion.weather.direction." + directionS)
+                        new TranslatableComponent("message.dcmexpansion.weather.direction." + directionS)
                 );
 
+                String messageDelimiter = " | ";
+
                 if (!elements.isEmpty()) {
-                    message += " | " + String.join(" | ", elements);
+                    distanceComponent.append(messageDelimiter);
+                    for (int i = 0; i < elements.size(); i++) {
+                        distanceComponent.append(elements.get(i));
+                        if (i < elements.size() - 1) {
+                            distanceComponent.append(messageDelimiter);
+                        }
+                    }
                 }
+
+                message = distanceComponent;
 
             }
             else {
-                message = I18n.get("message.dcmexpansion.weather.no_storm");
+                message = new TranslatableComponent("message.dcmexpansion.weather.no_storm");
             }
 
-            player.playSound(DcmSounds.WEATHER_TESTER.get(), 0.75F, 1.0F);
-            player.displayClientMessage(new TextComponent(message).withStyle(ChatFormatting.GREEN), false);
+            level.playSound(null, player.getX(), player.getY(), player.getZ(),
+                    DcmSounds.WEATHER_TESTER.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
+            player.displayClientMessage(message.withStyle(ChatFormatting.GREEN), true);
 
             energyContainer.extract(energyCost, Action.EXECUTE, AutomationType.MANUAL);
             player.getCooldowns().addCooldown(this, 20 * cooldowns);

@@ -1,15 +1,18 @@
 package net.kzeroko.dcmexpansion;
 
 import com.mojang.logging.LogUtils;
+import com.tacz.guns.api.event.common.EntityHurtByGunEvent;
 import net.kzeroko.dcmexpansion.config.DcmExpansionConfig;
 import net.kzeroko.dcmexpansion.registry.*;
 import net.kzeroko.dcmexpansion.registry.modintegration.*;
 import net.kzeroko.dcmexpansion.util.RefUtil;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -26,13 +29,15 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
-
-import java.util.stream.Collectors;
+import org.slf4j.LoggerFactory;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotTypeMessage;
 
 @Mod("dcmexpansion")
 public class DcmExpansion {
     public static final String MOD_ID = "dcmexpansion";
     private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger MOD_LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static final CreativeModeTab INTEGRATION_GROUP = new CreativeModeTab(MOD_ID + "." + "modIntegrationItems") {
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(DcmIntegrationItems.SCREEN_COMPONENT.get());
@@ -48,6 +53,9 @@ public class DcmExpansion {
             return new ItemStack(DcmMiscItems.WATERBOTTLE_FILLED.get());
         }
     };
+
+    private static final ResourceLocation CURIOS_ICON_UNIT = new ResourceLocation("curios:slot/unit");
+    private static final ResourceLocation CURIOS_ICON_BPVEST = new ResourceLocation("curios:slot/bpvest");
 
     public DcmExpansion()
     {
@@ -80,32 +88,41 @@ public class DcmExpansion {
             WeatherItems.REGISTER.register(eventBus);
         }
 
+        if (ModList.get().isLoaded(RefUtil.cold_sweat_MODID)) {
+            ColdSweatItems.REGISTER.register(eventBus);
+        }
+
+        if (ModList.get().isLoaded(RefUtil.tacz_MODID)) {
+            TaczItems.REGISTER.register(eventBus);
+        }
+
         modLoadingContext.registerConfig(ModConfig.Type.SERVER, DcmExpansionConfig.serverSpec);
         modLoadingContext.registerConfig(ModConfig.Type.CLIENT, DcmExpansionConfig.clientSpec);
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        //
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
     {
-        InterModComms.sendTo("dcmexpansion", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
+        // Init slot curios
+        InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () ->
+                new SlotTypeMessage.Builder("unit").priority(400).icon(CURIOS_ICON_UNIT).build());
+        InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () ->
+                new SlotTypeMessage.Builder("bpvest").priority(500).icon(CURIOS_ICON_BPVEST).build());
     }
 
     private void processIMC(final InterModProcessEvent event)
     {
-        LOGGER.info("Got IMC {}", event.getIMCStream().
-                map(m->m.messageSupplier().get()).
-                collect(Collectors.toList()));
+        //
     }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
-        LOGGER.info("HELLO from server starting");
+        //
     }
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -114,11 +131,12 @@ public class DcmExpansion {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent)
         {
-            LOGGER.info("HELLO from Register Block");
+            //
         }
     }
 
     public void registerFirstAidItems(RegistryEvent.Register<Item> event) {
         DcmFirstaidItems.init(event.getRegistry());
     }
+
 }

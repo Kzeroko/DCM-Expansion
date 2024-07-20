@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "dcmexpansion:bp_vest_light",
+    "dcmexpansion:bp_vest_medium"
+  ]
+}

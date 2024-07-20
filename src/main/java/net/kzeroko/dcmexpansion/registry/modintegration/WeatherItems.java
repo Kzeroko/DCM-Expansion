@@ -12,9 +12,9 @@ public class WeatherItems {
     public static final DeferredRegister<Item> REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, DcmExpansion.MOD_ID);
     public static final RegistryObject<Item> WEATHER_TESTER_NORMAL =
             REGISTER.register( "weather_tester_normal",
-                    ()-> new WeatherTestItem(2, 2000, 60, 500));
+                    ()-> new WeatherTestItem(5, 2000, 60, 500));
     public static final RegistryObject<Item> WEATHER_TESTER_ELITE =
             REGISTER.register( "weather_tester_elite",
-                    ()-> new WeatherTestItem(12, 4000, 20, 1500));
+                    ()-> new WeatherTestItem(15, 4000, 20, 1500));
 
 }

@@ -14,6 +14,10 @@
   "item.dcmexpansion.compressed_battery": "Compressed Battery",
   "item.dcmexpansion.weather_tester_normal": "Weather Tester (Normal)",
   "item.dcmexpansion.weather_tester_elite": "Weather Tester (Elite)",
+  "item.dcmexpansion.temperature_unit_normal": "Temperature Control Module (Normal)",
+  "item.dcmexpansion.temperature_unit_elite": "Temperature Control Module (Elite)",
+  "item.dcmexpansion.bp_vest_light": "Bullet-Proof Vest (Tactical)",
+  "item.dcmexpansion.bp_vest_medium": "Bullet-Proof Vest (Military)",
 
   "effect.dcmexpansion.anti_infection": "Anti-Infection",
 
@@ -51,6 +55,9 @@
   "message.dcmexpansion.weather.direction.south": "South",
   "message.dcmexpansion.weather.direction.west": "West",
   "message.dcmexpansion.weather.direction.east": "East",
+
+  "curios.identifier.unit": "Unit Module",
+  "curios.identifier.bpvest": "Bullet-Proof Vest",
 
   "config.dcmexpansion.firstAidKitHP": "First-Aid Kit|Heal percentage",
   "config.dcmexpansion.modernMedkitHP": "Modern Medical Device|Heal percentage",

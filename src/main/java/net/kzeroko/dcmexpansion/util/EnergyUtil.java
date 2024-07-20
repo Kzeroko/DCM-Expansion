@@ -8,27 +8,62 @@ public class EnergyUtil {
     private static final double EU_TO_FE = 4;
     private static final double EU_TO_J = 10;
 
-    public static double feToJoules(double fe) {
+    /**
+     * Energy conversion equation helper <p>
+     * 1 FE = 2.5 J = 0.25 EU <p>
+     * 0.4 FE = 1 J = 0.1 EU <p>
+     * 4 FE = 10 J = 1 EU
+     * */
+    public static double convertEnergy(double value, Type from, Type to) {
+        return switch (from) {
+            case FE -> switch (to) {
+                case FE -> value;
+                case J -> feToJoules(value);
+                case EU -> feToEu(value);
+            };
+            case J -> switch (to) {
+                case FE -> joulesToFe(value);
+                case J -> value;
+                case EU -> joulesToEu(value);
+            };
+            case EU -> switch (to) {
+                case FE -> euToFe(value);
+                case J -> euToJoules(value);
+                case EU -> value;
+            };
+        };
+    }
+
+    private static double feToJoules(double fe) {
         return fe * FE_TO_J;
     }
 
-    public static double feToEu(double fe) {
+    private static double feToEu(double fe) {
         return fe * FE_TO_EU;
     }
 
-    public static double joulesToFe(double joules) {
+    private static double joulesToFe(double joules) {
         return joules * J_TO_FE;
     }
 
-    public static double joulesToEu(double joules) {
+    private static double joulesToEu(double joules) {
         return joules * J_TO_EU;
     }
 
-    public static double euToFe(double eu) {
+    private static double euToFe(double eu) {
         return eu * EU_TO_FE;
     }
 
-    public static double euToJoules(double eu) {
+    private static double euToJoules(double eu) {
         return eu * EU_TO_J;
+    }
+
+    public enum Type {
+        FE,
+        J,
+        EU;
+
+        Type() {
+        }
     }
 }

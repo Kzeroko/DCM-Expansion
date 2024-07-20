@@ -14,10 +14,10 @@
   "item.dcmexpansion.compressed_battery": "空压电池",
   "item.dcmexpansion.weather_tester_normal": "气候探测仪（普通）",
   "item.dcmexpansion.weather_tester_elite": "气候探测仪（精英）",
-  "tooltip.dcmexpansion.weather_tester.cooldown": "距离下次检测 ",
-  "tooltip.dcmexpansion.weather_tester.range": "有效距离：",
-  "tooltip.dcmexpansion.weather_tester.usage1": "直接使用获取所有天气数据",
-  "tooltip.dcmexpansion.weather_tester.usage2": "SHIFT使用获取有害天气数据",
+  "item.dcmexpansion.temperature_unit_normal": "控温单元（普通）",
+  "item.dcmexpansion.temperature_unit_elite": "控温单元（精英）",
+  "item.dcmexpansion.bp_vest_light": "防弹衣（战术）",
+  "item.dcmexpansion.bp_vest_medium": "防弹衣（军用）",
 
   "effect.dcmexpansion.anti_infection": "感染抗体",
 
@@ -32,6 +32,10 @@
   "tooltip.dcmexpansion.compressed_battery": "手持空压电池Shift+右键为副手的平板电脑充能",
   "tooltip.dcmexpansion.compressed_battery_amount": "剩余%s/5次使用次数",
   "tooltip.dcmexpansion.compressed_battery_amount_na": "剩余5/5次使用次数",
+  "tooltip.dcmexpansion.weather_tester.cooldown": "距离下次检测 ",
+  "tooltip.dcmexpansion.weather_tester.range": "有效距离：",
+  "tooltip.dcmexpansion.weather_tester.usage1": "直接使用获取所有天气数据",
+  "tooltip.dcmexpansion.weather_tester.usage2": "SHIFT使用获取有害天气数据",
 
   "message.dcmexpansion.cb_outofuse": "这块电池已经没有任何充能了",
   "message.dcmexpansion.horde_disable_pocket_block": "检测到有尸潮发生，已开启隔离",
@@ -51,6 +55,9 @@
   "message.dcmexpansion.weather.direction.south": "南",
   "message.dcmexpansion.weather.direction.west": "西",
   "message.dcmexpansion.weather.direction.east": "东",
+
+  "curios.identifier.unit": "单元插件",
+  "curios.identifier.bpvest": "防弹衣",
 
   "config.dcmexpansion.firstAidKitHP": "急救包|治疗百分比",
   "config.dcmexpansion.modernMedkitHP": "现代化急救包|治疗百分比",
