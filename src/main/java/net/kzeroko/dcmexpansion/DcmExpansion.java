@@ -1,14 +1,11 @@
 package net.kzeroko.dcmexpansion;
 
 import com.mojang.logging.LogUtils;
-import com.tacz.guns.api.event.common.EntityHurtByGunEvent;
 import net.kzeroko.dcmexpansion.config.DcmExpansionConfig;
 import net.kzeroko.dcmexpansion.registry.*;
 import net.kzeroko.dcmexpansion.registry.modintegration.*;
 import net.kzeroko.dcmexpansion.util.RefUtil;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

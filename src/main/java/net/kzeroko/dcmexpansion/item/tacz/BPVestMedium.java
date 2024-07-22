@@ -7,6 +7,7 @@ import com.tacz.guns.api.event.common.EntityHurtByGunEvent;
 import net.kzeroko.dcmexpansion.client.curios.CurioModel;
 import net.kzeroko.dcmexpansion.client.curios.ICurioRenderable;
 import net.kzeroko.dcmexpansion.item.DcmCurioItem;
+import net.kzeroko.dcmexpansion.registry.modintegration.TaczItems;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.PartPose;
@@ -31,7 +32,6 @@ import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 import java.util.List;
 
-@Mod.EventBusSubscriber
 public class BPVestMedium extends DcmCurioItem implements ICurioRenderable {
     public BPVestMedium() {
         super(410);
@@ -171,24 +171,29 @@ public class BPVestMedium extends DcmCurioItem implements ICurioRenderable {
         return Lists.newArrayList("body");
     }
 
-    @SubscribeEvent
-    public void onEntityHurtByGun(EntityHurtByGunEvent.Pre event) {
-        Entity entity = event.getHurtEntity();
-        if (entity instanceof Player player && !player.level.isClientSide()) {
-            var curioVest = this;
+    @Mod.EventBusSubscriber
+    public static class Events {
+        @SubscribeEvent
+        public void onEntityHurtByGun(EntityHurtByGunEvent.Pre event) {
+            Entity entity = event.getHurtEntity();
+            if (entity instanceof LivingEntity le) { //  && !le.level.isClientSide()
+                var curioVest = TaczItems.BP_VEST_MEDIUM.get();
 
-            float multiplier = 1.0F;
+                float multiplier = 1.0F;
 
-            if (event.isHeadShot()) return;
+                if (curioVest.isEquippedBy(le)) {
 
-            if (curioVest.isEquippedBy(player)) {
-                curioVest.damageAllEquipped(player, 1);
+                    multiplier = 0.1F;
 
-                multiplier = 0.05F;
-                event.setBaseAmount(event.getBaseAmount() * multiplier);
+                    if (!event.isHeadShot()) {
+                        curioVest.damageAllEquipped(le, 1);
+                        event.setBaseAmount(event.getBaseAmount() * multiplier);
+                    }
+
+                }
+
             }
 
         }
-
     }
 }

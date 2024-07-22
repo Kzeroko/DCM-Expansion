@@ -16,11 +16,11 @@ public class HUDOverlayHandlerMixin {
 
     @Inject(method = "renderExhaustion", at = @At("HEAD"), cancellable = true, remap = false)
     private static void onRenderPlayerThirstExhaustion(ForgeIngameGui gui, PoseStack mStack, CallbackInfo ci) {
-        ci.cancel();
+        //ci.cancel();
     }
 
     @Inject(method = "renderThirstOverlay", at = @At("HEAD"), cancellable = true, remap = false)
     private static void onRenderPlayerThirstOverlay(PoseStack mStack, CallbackInfo ci) {
-        ci.cancel();
+        //ci.cancel();
     }
 }

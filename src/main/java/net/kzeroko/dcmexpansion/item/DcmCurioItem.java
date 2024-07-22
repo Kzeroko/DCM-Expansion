@@ -41,9 +41,8 @@ public class DcmCurioItem extends Item implements ICurioItem {
     }
 
     public void damageAllEquipped(LivingEntity entity, int damage) {
-        if (entity instanceof Player player && player.isCreative()) {
-            return;
-        }
+        if (entity instanceof Player player && player.isCreative()) return;
+
         CuriosApi.getCuriosHelper().getCuriosHandler(entity).ifPresent(curiosHandler ->
                 curiosHandler.getCurios().forEach((identifier, stacksHandler) -> {
                     IDynamicStackHandler stacks = stacksHandler.getStacks();

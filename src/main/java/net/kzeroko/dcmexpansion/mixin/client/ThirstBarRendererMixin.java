@@ -16,6 +16,6 @@ public class ThirstBarRendererMixin {
 
     @Inject(method = "render", at = @At("HEAD"), cancellable = true, remap = false)
     private static void onRenderPlayerThirst(ForgeIngameGui gui, int screenWidth, int screenHeight, PoseStack poseStack, CallbackInfo ci) {
-        ci.cancel();
+        //ci.cancel();
     }
 }
