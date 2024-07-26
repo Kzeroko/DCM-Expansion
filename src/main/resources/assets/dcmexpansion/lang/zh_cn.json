@@ -32,14 +32,23 @@
   "item.dcmexpansion.temperature_unit_elite": "控温单元（精英）",
   "item.dcmexpansion.bp_vest_light": "防弹衣（战术）",
   "item.dcmexpansion.bp_vest_medium": "防弹衣（军用）",
+  "item.dcmexpansion.repairkit_t1": "修理套件（废弃）",
+  "item.dcmexpansion.repairkit_t2": "修理套件（进阶）",
+  "item.dcmexpansion.repairkit_t3": "修理套件（军用）",
+  "item.dcmexpansion.compressed_energy_tablet": "压缩型能量面板",
+
+  "item.dcmexpansion.stun_rod": "NVS-II电击棍",
 
   "effect.dcmexpansion.anti_infection": "感染抗体",
+  "effect.dcmexpansion.fast_heal": "快速治疗",
+  "effect.dcmexpansion.electrified": "电击",
 
   "itemGroup.dcmexpansion.healingItems": "DCM扩展-治疗物品",
   "itemGroup.dcmexpansion.modIntegrationItems": "DCM扩展-模组兼容",
-  "itemGroup.dcmexpansion.foodsAndDrinks": "DCM扩展-饮食",
+  "itemGroup.dcmexpansion.foodsAndDrinks": "DCM扩展-饮食物品",
+  "itemGroup.dcmexpansion.weapons": "DCM扩展-武器装备",
 
-  "tooltip.dcmexpansion.adrenaline": "使用后获得伤害吸收与速度",
+  "tooltip.dcmexpansion.adrenaline": "使用后获得快速治疗，伤害吸收与速度",
   "tooltip.dcmexpansion.firstaid_kit": "使用后治疗最大生命值的%s%%",
   "tooltip.dcmexpansion.modernmedkit": "使用后获得抗性提升",
   "tooltip.dcmexpansion.antiinfection_serum": "使用后获得感染抗体与饥饿",

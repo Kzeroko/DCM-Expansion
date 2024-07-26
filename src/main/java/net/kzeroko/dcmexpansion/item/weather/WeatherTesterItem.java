@@ -36,15 +36,15 @@ import weather2.weathersystem.storm.StormObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeatherTestItem extends ItemEnergized {
+public class WeatherTesterItem extends ItemEnergized {
     private final int cooldowns;
     private final int scanDistance;
 
-    public WeatherTestItem(double chargeRate, double capacity, int cooldowns, int scanDistance) {
+    public WeatherTesterItem(double chargeRate, double capacity, int cooldowns, int scanDistance) {
         super(
                 ()-> FloatingLong.createConst(EnergyUtil.convertEnergy(chargeRate, EnergyUtil.Type.FE, EnergyUtil.Type.J)),
                 ()-> FloatingLong.createConst(EnergyUtil.convertEnergy(capacity, EnergyUtil.Type.FE, EnergyUtil.Type.J)),
-                (new Properties()).tab(DcmExpansion.INTEGRATION_GROUP).stacksTo(1)
+                (new Properties()).tab(DcmExpansion.INTEGRATION).stacksTo(1)
         );
         this.cooldowns = cooldowns;
         this.scanDistance = scanDistance;
@@ -62,6 +62,7 @@ public class WeatherTestItem extends ItemEnergized {
         if (!level.isClientSide() && energyContainer != null && !energy.isZero() && !energy.smallerThan(energyCost)) {
             Vec3 playerPos = player.position();
 
+            // Get storm from player pos
             StormObject stormAny;
             WeatherManager weatherManager = getWeatherManagerFor(level);
             if (player.isCrouching()) {
@@ -78,6 +79,7 @@ public class WeatherTestItem extends ItemEnergized {
 
                 List<Component> elements = new ArrayList<>();
 
+                // Get weather tags
                 if (stormAny.isCloudlessStorm()) elements.add(new TranslatableComponent("message.dcmexpansion.weather.cloudless_storm"));
                 if (stormAny.isRealStorm()) elements.add(new TranslatableComponent("message.dcmexpansion.weather.real_storm"));
                 if (stormAny.isTornadoFormingOrGreater()) elements.add(new TranslatableComponent("message.dcmexpansion.weather.tornado_forming"));

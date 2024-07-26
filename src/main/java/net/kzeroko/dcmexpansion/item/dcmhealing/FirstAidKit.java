@@ -2,6 +2,7 @@ package net.kzeroko.dcmexpansion.item.dcmhealing;
 
 import net.kzeroko.dcmexpansion.config.DcmExpansionConfig;
 import net.kzeroko.dcmexpansion.item.KitItem;
+import net.kzeroko.dcmexpansion.registry.DcmEffects;
 import net.kzeroko.dcmexpansion.util.HealItemUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -25,7 +26,7 @@ public class FirstAidKit extends KitItem {
 
     @Override
     public int getUseDuration(@NotNull ItemStack stack) {
-        return 5 * 20;
+        return (getUsagePlayer() != null && getUsagePlayer().hasEffect(DcmEffects.FAST_HEAL.get())) ? 50 : 100;
     }
 
     @Override

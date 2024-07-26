@@ -1,5 +1,10 @@
 package net.kzeroko.dcmexpansion.util;
 
+import mekanism.api.energy.IEnergyContainer;
+import mekanism.api.math.FloatingLong;
+import mekanism.common.util.StorageUtils;
+import net.minecraft.world.item.ItemStack;
+
 public class EnergyUtil {
     private static final double FE_TO_J = 2.5;
     private static final double FE_TO_EU = 0.25;
@@ -59,11 +64,15 @@ public class EnergyUtil {
     }
 
     public enum Type {
-        FE,
-        J,
-        EU;
-
+        FE, J, EU;
         Type() {
         }
+    }
+
+    /** Check if an ItemStack is charged with energy */
+    public static boolean isStackCharged(ItemStack stack) {
+        IEnergyContainer energyContainer = StorageUtils.getEnergyContainer(stack, 0);
+        FloatingLong energy = energyContainer == null ? FloatingLong.ZERO : energyContainer.getEnergy();
+        return energyContainer != null && energy.greaterThan(FloatingLong.ZERO);
     }
 }

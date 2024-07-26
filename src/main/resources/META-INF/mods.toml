@@ -62,6 +62,18 @@ Mod that adds contents to DCM modpack.
     ordering="NONE"
     side="BOTH"
 [[dependencies.dcmexpansion]]
+    modId="securitycraft"
+    mandatory=true
+    versionRange="[1.9.10,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dcmexpansion]]
+    modId="bettercombat"
+    mandatory=true
+    versionRange="[1.6.2+1.18.2,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dcmexpansion]]
     modId="framework"
     mandatory=true
     versionRange="[0.4.3,)"

@@ -15,10 +15,13 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public abstract class KitItem extends Item {
+    private Player usagePlayer;
+
     public KitItem() {
-        super((new Properties()).tab(DcmExpansion.HEALING_GROUP).stacksTo(4));
+        super((new Properties()).tab(DcmExpansion.HEALING).stacksTo(4));
     }
 
     public abstract int getHealPercentage();
@@ -48,12 +51,20 @@ public abstract class KitItem extends Item {
     public InteractionResultHolder<ItemStack> use(@NotNull Level world, Player player, @Nonnull InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
         player.startUsingItem(hand);
-
+        setUsagePlayer(player);
         return new InteractionResultHolder<>(InteractionResult.SUCCESS, itemstack);
     }
 
     public int getUseDuration(@NotNull ItemStack stack) {
         return 120;
+    }
+
+    public void setUsagePlayer(Player player) {
+        this.usagePlayer = player;
+    }
+
+    public @Nullable Player getUsagePlayer() {
+        return usagePlayer;
     }
 
 }

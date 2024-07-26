@@ -1,4 +1,4 @@
-package net.kzeroko.dcmexpansion.mixin.client;
+/*package net.kzeroko.dcmexpansion.mixin.client.thirst;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import dev.ghen.thirst.foundation.gui.ThirstBarRenderer;
@@ -18,4 +18,4 @@ public class ThirstBarRendererMixin {
     private static void onRenderPlayerThirst(ForgeIngameGui gui, int screenWidth, int screenHeight, PoseStack poseStack, CallbackInfo ci) {
         //ci.cancel();
     }
-}
+}*/

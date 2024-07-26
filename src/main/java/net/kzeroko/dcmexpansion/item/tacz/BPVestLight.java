@@ -3,11 +3,9 @@ package net.kzeroko.dcmexpansion.item.tacz;
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.tacz.guns.api.event.common.EntityHurtByGunEvent;
 import net.kzeroko.dcmexpansion.client.curios.CurioModel;
 import net.kzeroko.dcmexpansion.client.curios.ICurioRenderable;
-import net.kzeroko.dcmexpansion.item.DcmCurioItem;
-import net.kzeroko.dcmexpansion.registry.modintegration.TaczItems;
+import net.kzeroko.dcmexpansion.item.CurioItem;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.PartPose;
@@ -19,21 +17,17 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 import java.util.List;
 
-@Mod.EventBusSubscriber
-public class BPVestLight extends DcmCurioItem implements ICurioRenderable {
+public class BPVestLight extends CurioItem implements ICurioRenderable {
     public BPVestLight() {
         super(220);
     }
@@ -153,7 +147,7 @@ public class BPVestLight extends DcmCurioItem implements ICurioRenderable {
         return Lists.newArrayList("body");
     }
 
-    @Mod.EventBusSubscriber
+    /*@Mod.EventBusSubscriber(modid = DcmExpansion.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.DEDICATED_SERVER)
     public static class Events {
         @SubscribeEvent
         public void onEntityHurtByGun(EntityHurtByGunEvent.Pre event) {
@@ -162,6 +156,19 @@ public class BPVestLight extends DcmCurioItem implements ICurioRenderable {
                 var curioVest = TaczItems.BP_VEST_LIGHT.get();
 
                 float multiplier = 1.0F;
+
+
+                if (le instanceof Player player) {
+
+                    boolean vestEquipped = curioVest.isEquippedBy(player);
+
+                    player.displayClientMessage(new TextComponent(
+                            "Headshot: " + event.isHeadShot()
+                                    + ", VestEquipped: " + vestEquipped
+                                    + ", Base Damage: " + event.getBaseAmount()
+                                    + ", Damage: " + event.getAmount()
+                    ), false);
+                }
 
                 if (curioVest.isEquippedBy(le)) {
 
@@ -177,7 +184,7 @@ public class BPVestLight extends DcmCurioItem implements ICurioRenderable {
             }
 
         }
-    }
+    }*/
 
 
 }

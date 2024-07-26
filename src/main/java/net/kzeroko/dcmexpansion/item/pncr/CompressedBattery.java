@@ -20,7 +20,7 @@ import java.util.List;
 
 public class CompressedBattery extends Item {
     public CompressedBattery() {
-        super((new Item.Properties()).tab(DcmExpansion.INTEGRATION_GROUP).stacksTo(1));
+        super((new Item.Properties()).tab(DcmExpansion.INTEGRATION).stacksTo(1));
     }
 
 

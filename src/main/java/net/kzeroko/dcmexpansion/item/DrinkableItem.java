@@ -67,7 +67,8 @@ public class DrinkableItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand hand) {
         ItemStack heldStack = player.getItemInHand(hand);
         if (heldStack.isEdible()) {
-            if (player.canEat(heldStack.getFoodProperties(player).canAlwaysEat())) {
+            var foodProp = heldStack.getFoodProperties(player);
+            if (foodProp != null && player.canEat(foodProp.canAlwaysEat())) {
                 player.startUsingItem(hand);
                 return InteractionResultHolder.consume(heldStack);
             } else {

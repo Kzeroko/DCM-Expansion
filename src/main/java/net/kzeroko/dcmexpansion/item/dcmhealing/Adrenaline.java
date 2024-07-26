@@ -4,6 +4,7 @@ import ichttt.mods.firstaid.api.damagesystem.AbstractPlayerDamageModel;
 import ichttt.mods.firstaid.common.util.CommonUtils;
 import net.kzeroko.dcmexpansion.DcmExpansion;
 import net.kzeroko.dcmexpansion.config.DcmExpansionConfig;
+import net.kzeroko.dcmexpansion.registry.DcmEffects;
 import net.kzeroko.dcmexpansion.registry.DcmSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -29,7 +30,7 @@ import java.util.Objects;
 
 public class Adrenaline extends Item {
     public Adrenaline() {
-        super((new Item.Properties()).tab(DcmExpansion.HEALING_GROUP).stacksTo(8));
+        super((new Item.Properties()).tab(DcmExpansion.HEALING).stacksTo(8));
     }
 
     @Nonnull
@@ -62,6 +63,8 @@ public class Adrenaline extends Item {
 
             le.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,
                     server.adrenalineSpeedSeconds.get() * 20,2,false,false,false));
+            le.addEffect(new MobEffectInstance(DcmEffects.FAST_HEAL.get(),
+                    server.adrenalineSpeedSeconds.get() * 20,0,false,false,true));
 
             world.playSound(null, le.getX(), le.getY(), le.getZ(),
                     DcmSounds.ADRENALINE_INJECT.get(), SoundSource.PLAYERS, 0.8F, 1.0F);

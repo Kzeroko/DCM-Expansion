@@ -1,4 +1,4 @@
-package net.kzeroko.dcmexpansion.mixin.client;
+/*package net.kzeroko.dcmexpansion.mixin.client.thirst;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import dev.ghen.thirst.foundation.gui.appleskin.HUDOverlayHandler;
@@ -23,4 +23,4 @@ public class HUDOverlayHandlerMixin {
     private static void onRenderPlayerThirstOverlay(PoseStack mStack, CallbackInfo ci) {
         //ci.cancel();
     }
-}
+}*/

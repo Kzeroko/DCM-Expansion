@@ -13,10 +13,10 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 
 public class DcmTags {
 
-    public static final TagKey<Item> TEST_ITEM_TAG = create(Registry.ITEM_REGISTRY, "test_item");
+    public static final TagKey<Item> REPAIRKIT_BLACKLIST = create(Registry.ITEM_REGISTRY, "repairkit_blacklist");
     public static final TagKey<Block> TEST_BLOCK_TAG = create(Registry.BLOCK_REGISTRY, "test_block");
     public static final TagKey<MobEffect> TEST_EFFECT_TAG = create(Registry.MOB_EFFECT_REGISTRY, "test_effect");
-    public static final TagKey<EntityType<?>> TEST_ENTITY_TAG = create(Registry.ENTITY_TYPE_REGISTRY, "test_entity");
+    public static final TagKey<EntityType<?>> FIXED_DAMAGE_BLACKLIST = create(Registry.ENTITY_TYPE_REGISTRY, "fixed_damage_blacklist");
 
     private static <T extends IForgeRegistryEntry<T>> TagKey<T> create(ResourceKey<Registry<T>> registry, String id) {
         return TagKey.create(registry, new ResourceLocation(DcmExpansion.MOD_ID, id));

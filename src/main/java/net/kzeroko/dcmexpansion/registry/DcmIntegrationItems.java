@@ -1,7 +1,9 @@
 package net.kzeroko.dcmexpansion.registry;
 
 import net.kzeroko.dcmexpansion.DcmExpansion;
+import net.kzeroko.dcmexpansion.item.EnergyMaterialItem;
 import net.kzeroko.dcmexpansion.item.MaterialItem;
+import net.kzeroko.dcmexpansion.item.RepairKitItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraftforge.registries.DeferredRegister;
@@ -26,5 +28,9 @@ public class DcmIntegrationItems {
     public static final RegistryObject<Item> AIRCRAFT_CANISTER_T1 = REGISTER.register( "aircraft_canister_t1", ()-> new MaterialItem(16, Rarity.RARE));
     public static final RegistryObject<Item> AIRCRAFT_CANISTER_T2 = REGISTER.register( "aircraft_canister_t2", ()-> new MaterialItem(16, Rarity.RARE));
     public static final RegistryObject<Item> AIRCRAFT_CANISTER_T3 = REGISTER.register( "aircraft_canister_t3", ()-> new MaterialItem(16, Rarity.RARE));
+    public static final RegistryObject<Item> REPAIRKIT_T1 = REGISTER.register( "repairkit_t1", ()-> new RepairKitItem(0.15F));
+    public static final RegistryObject<Item> REPAIRKIT_T2 = REGISTER.register( "repairkit_t2", ()-> new RepairKitItem(0.45F));
+    public static final RegistryObject<Item> REPAIRKIT_T3 = REGISTER.register( "repairkit_t3", ()-> new RepairKitItem(1.0F));
+    public static final RegistryObject<Item> COMPRESSED_ENERGY_TABLET = REGISTER.register( "compressed_energy_tablet", ()-> new EnergyMaterialItem(20, 1500000, Rarity.RARE));
 
 }

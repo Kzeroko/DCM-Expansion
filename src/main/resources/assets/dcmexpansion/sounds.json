@@ -31,6 +31,26 @@
          { "name": "dcmexpansion:item/modernmedkit_4" }
       ]
    },
+   "item.modernmedkit_fast.1": {
+      "sounds": [
+         { "name": "dcmexpansion:item/modernmedkit_fast_1" }
+      ]
+   },
+   "item.modernmedkit_fast.2": {
+      "sounds": [
+         { "name": "dcmexpansion:item/modernmedkit_fast_2" }
+      ]
+   },
+   "item.modernmedkit_fast.3": {
+      "sounds": [
+         { "name": "dcmexpansion:item/modernmedkit_fast_3" }
+      ]
+   },
+   "item.modernmedkit_fast.4": {
+      "sounds": [
+         { "name": "dcmexpansion:item/modernmedkit_fast_4" }
+      ]
+   },
    "item.weathertester.test": {
       "subtitle": "subtitle.dcmexpansion.weathertester_test",
       "sounds": [

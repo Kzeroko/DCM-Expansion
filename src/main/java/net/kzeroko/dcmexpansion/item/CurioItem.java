@@ -14,10 +14,10 @@ import top.theillusivec4.curios.api.type.inventory.IDynamicStackHandler;
 
 import javax.annotation.Nullable;
 
-public class DcmCurioItem extends Item implements ICurioItem {
+public class CurioItem extends Item implements ICurioItem {
 
-    public DcmCurioItem(int durability) {
-        super(new Properties().tab(DcmExpansion.INTEGRATION_GROUP).stacksTo(1).durability(durability));
+    public CurioItem(int durability) {
+        super(new Properties().tab(DcmExpansion.INTEGRATION).stacksTo(1).durability(durability));
     }
 
     public boolean isEquippedBy(@Nullable LivingEntity entity) {

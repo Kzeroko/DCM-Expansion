@@ -17,7 +17,7 @@
   "item.dcmexpansion.gold_bar": "Gold Bar",
   "item.dcmexpansion.industrial_engine": "Industrial Engine",
   "item.dcmexpansion.laptop_a": "Pineapple Laptop",
-  "item.dcmexpansion.laptop_b": "FPO Laptop",
+  "item.dcmexpansion.laptop_b": "FlexPO Laptop",
   "item.dcmexpansion.mobile_phone_a": "Mobile Phone",
   "item.dcmexpansion.filled_canister": "Filled Canister",
   "item.dcmexpansion.tella_cpu": "TELLA-CPU",
@@ -32,14 +32,23 @@
   "item.dcmexpansion.temperature_unit_elite": "Temperature Control Module (Elite)",
   "item.dcmexpansion.bp_vest_light": "Bullet-Proof Vest (Tactical)",
   "item.dcmexpansion.bp_vest_medium": "Bullet-Proof Vest (Military)",
+  "item.dcmexpansion.repairkit_t1": "Repair Kit (Scrap)",
+  "item.dcmexpansion.repairkit_t2": "Repair Kit (Advanced)",
+  "item.dcmexpansion.repairkit_t3": "Repair Kit (Military)",
+  "item.dcmexpansion.compressed_energy_tablet": "Compressed Energy Tablet",
+
+  "item.dcmexpansion.stun_rod": "NVS-II Stun Rod",
 
   "effect.dcmexpansion.anti_infection": "Anti-Infection",
+  "effect.dcmexpansion.fast_heal": "Fast Heal",
+  "effect.dcmexpansion.electrified": "Electrified",
 
   "itemGroup.dcmexpansion.healingItems": "DCM Expansion-Healing",
   "itemGroup.dcmexpansion.modIntegrationItems": "DCM Expansion-Mod Integrations",
   "itemGroup.dcmexpansion.foodsAndDrinks": "DCM Expansion-Foods & Drinks",
+  "itemGroup.dcmexpansion.weapons": "DCM Expansion-Weapons",
 
-  "tooltip.dcmexpansion.adrenaline": "Grants Absorption & Speed after consume",
+  "tooltip.dcmexpansion.adrenaline": "Grants Fast Heal, Absorption and Speed after consume",
   "tooltip.dcmexpansion.firstaid_kit": "Heals %s% of max health after consume",
   "tooltip.dcmexpansion.modernmedkit": "Grants Resistance after consume",
   "tooltip.dcmexpansion.antiinfection_serum": "Grants Anti-Infection and Hunger after consume",

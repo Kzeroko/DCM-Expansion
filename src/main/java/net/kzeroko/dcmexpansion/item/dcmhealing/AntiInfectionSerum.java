@@ -28,7 +28,7 @@ import java.util.List;
 
 public class AntiInfectionSerum extends Item {
     public AntiInfectionSerum() {
-        super((new Properties()).tab(DcmExpansion.HEALING_GROUP).stacksTo(8));
+        super((new Properties()).tab(DcmExpansion.HEALING).stacksTo(8));
     }
 
     @Nonnull

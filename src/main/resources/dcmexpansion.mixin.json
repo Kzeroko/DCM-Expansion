@@ -6,14 +6,16 @@
   "package": "net.kzeroko.dcmexpansion.mixin",
   "plugin": "net.kzeroko.dcmexpansion.mixin.DcmMixinPlugin",
   "mixins": [
-    "common.BlockPocketWallBlockMixin",
-    "common.LivingEntityMixin"
+    "common.AnvilMenuMixin",
+    "common.LivingEntityMixin",
+    "common.MobMixin",
+    "common.firstaid.FirstAidRegistryImplMixin",
+    "common.securitycraft.BlockPocketWallBlockMixin",
+    "common.tacz.EntityKineticBulletMixin"
   ],
   "client": [
     "client.EntityRendererMixin",
-    "client.GuiMixin",
-    "client.HUDOverlayHandlerMixin",
-    "client.ThirstBarRendererMixin"
+    "client.GuiMixin"
   ],
   "injectors": {
     "defaultRequire": 1

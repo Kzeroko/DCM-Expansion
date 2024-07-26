@@ -16,6 +16,10 @@ public class DcmSounds
 	public static final RegistryObject<SoundEvent> MODERNMEDKIT_2 = register("item.modernmedkit.2");
 	public static final RegistryObject<SoundEvent> MODERNMEDKIT_3 = register("item.modernmedkit.3");
 	public static final RegistryObject<SoundEvent> MODERNMEDKIT_4 = register("item.modernmedkit.4");
+	public static final RegistryObject<SoundEvent> MODERNMEDKIT_FAST_1 = register("item.modernmedkit_fast.1");
+	public static final RegistryObject<SoundEvent> MODERNMEDKIT_FAST_2 = register("item.modernmedkit_fast.2");
+	public static final RegistryObject<SoundEvent> MODERNMEDKIT_FAST_3 = register("item.modernmedkit_fast.3");
+	public static final RegistryObject<SoundEvent> MODERNMEDKIT_FAST_4 = register("item.modernmedkit_fast.4");
 	public static final RegistryObject<SoundEvent> WEATHER_TESTER = register("item.weathertester.test");
 
 	private static RegistryObject<SoundEvent> register(String key) {

@@ -32,7 +32,7 @@ public class EnergyCurioItem extends ItemEnergized implements ICurioItem {
         super(
                 ()-> FloatingLong.createConst(EnergyUtil.convertEnergy(chargeRate, EnergyUtil.Type.FE, EnergyUtil.Type.J)),
                 ()-> FloatingLong.createConst(EnergyUtil.convertEnergy(capacity, EnergyUtil.Type.FE, EnergyUtil.Type.J)),
-                (new Properties()).tab(DcmExpansion.INTEGRATION_GROUP).stacksTo(1)
+                (new Properties()).tab(DcmExpansion.INTEGRATION).stacksTo(1)
         );
     }
 

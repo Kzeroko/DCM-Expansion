@@ -72,7 +72,7 @@ public class DcmExpansionConfig {
 
             builder.push("firstaid_items");
 
-            bandage_pro = new FirstAidItems(builder, "bandage_pro", 20, 3, 8000);
+            bandage_pro = new FirstAidItems(builder, "bandage_pro", 20, 1, 4000);
 
             builder.pop();
 

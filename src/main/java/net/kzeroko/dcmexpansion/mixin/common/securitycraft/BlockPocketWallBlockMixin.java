@@ -1,4 +1,4 @@
-package net.kzeroko.dcmexpansion.mixin.common;
+package net.kzeroko.dcmexpansion.mixin.common.securitycraft;
 
 import net.geforcemods.securitycraft.blockentities.BlockPocketBlockEntity;
 import net.geforcemods.securitycraft.blocks.BlockPocketWallBlock;
