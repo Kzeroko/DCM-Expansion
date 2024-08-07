@@ -1128,7 +1128,7 @@
 		{
 			"from": [6.95, 8.85, 7],
 			"to": [6.95, 15.575, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 1, 8]},
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.95, 12.2125, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 0, 13.5], "texture": "#stun_rod_effect"},
 				"east": {"uv": [4, 0, 0, 13.5], "texture": "#stun_rod_effect"},
@@ -1149,6 +1149,32 @@
 				"west": {"uv": [8, 0, 4, 13.5], "texture": "#stun_rod_effect"},
 				"up": {"uv": [0, 4, 0, 0], "texture": "#stun_rod_effect"},
 				"down": {"uv": [0, 0, 0, 4], "texture": "#stun_rod_effect"}
+			}
+		},
+		{
+			"from": [7, 9.175, 9.05],
+			"to": [9, 15.9, 9.05],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 12.5375, 8]},
+			"faces": {
+				"north": {"uv": [0, 13.5, 4, 0], "texture": "#stun_rod_effect"},
+				"east": {"uv": [0, 13.5, 0, 0], "texture": "#stun_rod_effect"},
+				"south": {"uv": [4, 13.5, 0, 0], "texture": "#stun_rod_effect"},
+				"west": {"uv": [0, 13.5, 0, 0], "texture": "#stun_rod_effect"},
+				"up": {"uv": [0, 0, 0, 4], "rotation": 270, "texture": "#stun_rod_effect"},
+				"down": {"uv": [0, 4, 0, 0], "rotation": 90, "texture": "#stun_rod_effect"}
+			}
+		},
+		{
+			"from": [7, 9.175, 6.95],
+			"to": [9, 15.9, 6.95],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 12.5375, 8]},
+			"faces": {
+				"north": {"uv": [8, 13.5, 4, 0], "texture": "#stun_rod_effect"},
+				"east": {"uv": [0, 13.5, 0, 0], "texture": "#stun_rod_effect"},
+				"south": {"uv": [4, 13.5, 8, 0], "texture": "#stun_rod_effect"},
+				"west": {"uv": [0, 13.5, 0, 0], "texture": "#stun_rod_effect"},
+				"up": {"uv": [0, 0, 0, 4], "rotation": 270, "texture": "#stun_rod_effect"},
+				"down": {"uv": [0, 4, 0, 0], "rotation": 90, "texture": "#stun_rod_effect"}
 			}
 		}
 	],
@@ -1177,8 +1203,8 @@
 			"scale": [0.93, 0.93, 0.93]
 		},
 		"ground": {
-			"translation": [0, 9.75, 0],
-			"scale": [1.12, 1.12, 1.12]
+			"translation": [0, 8, 0],
+			"scale": [0.37, 0.37, 0.37]
 		},
 		"gui": {
 			"rotation": [90, 45, -90],
@@ -1331,7 +1357,7 @@
 					"name": "effect",
 					"origin": [8, 8, 8],
 					"color": 0,
-					"children": [86, 87]
+					"children": [86, 87, 88, 89]
 				}
 			]
 		}

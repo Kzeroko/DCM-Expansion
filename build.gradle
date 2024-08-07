@@ -24,7 +24,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = '0.7.1+1.18.2'
+version = '0.8.0+1.18.2'
 group = 'net.kzeroko.dcmexpansion'
 archivesBaseName = 'dcmexpansion'
 
@@ -170,7 +170,7 @@ dependencies {
     compileOnly fg.deobf(files("../DCM-expansion/externalmods/Atlas-Lib-1.18.2-1.1.8.jar"))
     compileOnly fg.deobf(files("../DCM-expansion/externalmods/The-Hordes-1.18.2-1.1.6a.jar"))
 
-    // Better Combat
+    // Better Combat Old
     //implementation fg.deobf("dev.kosmx.player-anim:player-animation-lib-forge:${player_anim_version}")
     //implementation fg.deobf('maven.modrinth:better-combat:1.6.2+1.18.2-forge')
 
@@ -181,7 +181,7 @@ dependencies {
     // Better Combat
     implementation fg.deobf('maven.modrinth:better-combat:1.6.2+1.18.2-forge')
 
-    // Crayfish Gun Mod
+    // Crayfish Stuff
     implementation fg.deobf('curse.maven:framework-549225:4613856')
     //implementation fg.deobf('curse.maven:mrcrayfishs-gun-mod-289479:4344223')
 
@@ -216,6 +216,14 @@ dependencies {
 
     // Security Craft
     implementation fg.deobf('curse.maven:security-craft-64760:5424858')
+
+    // McJty stuff
+    compileOnly fg.deobf(files("../DCM-expansion/externalmods/incontrol-1.18-6.1.13.jar"))
+    compileOnly fg.deobf(files("../DCM-expansion/externalmods/lostcities-1.18-5.3.29.jar"))
+    compileOnly fg.deobf(files("../DCM-expansion/externalmods/lostsouls-1.18-2.0.5.jar"))
+
+    // SCP
+    compileOnly fg.deobf(files("../DCM-expansion/externalmods/scpdtj-1.0.0-1.18.2.jar"))
 
     // Mixin
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

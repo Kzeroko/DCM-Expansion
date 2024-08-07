@@ -42,6 +42,8 @@
   "effect.dcmexpansion.anti_infection": "感染抗体",
   "effect.dcmexpansion.fast_heal": "快速治疗",
   "effect.dcmexpansion.electrified": "电击",
+  "effect.dcmexpansion.hazard_gas": "致命气体",
+  "effect.dcmexpansion.hazard_grace": "致命保护",
 
   "itemGroup.dcmexpansion.healingItems": "DCM扩展-治疗物品",
   "itemGroup.dcmexpansion.modIntegrationItems": "DCM扩展-模组兼容",
@@ -55,10 +57,13 @@
   "tooltip.dcmexpansion.compressed_battery": "手持空压电池Shift+右键为副手的平板电脑充能",
   "tooltip.dcmexpansion.compressed_battery_amount": "剩余%s/5次使用次数",
   "tooltip.dcmexpansion.compressed_battery_amount_na": "剩余5/5次使用次数",
-  "tooltip.dcmexpansion.weather_tester.cooldown": "距离下次检测 ",
+  "tooltip.dcmexpansion.weather_tester.cooldown": "距离下次检测",
   "tooltip.dcmexpansion.weather_tester.range": "有效距离：",
   "tooltip.dcmexpansion.weather_tester.usage1": "直接使用获取所有天气数据",
   "tooltip.dcmexpansion.weather_tester.usage2": "SHIFT使用获取有害天气数据",
+  "tooltip.dcmexpansion.temperature_unit.usage1": "全自动恒温单元装置",
+  "tooltip.dcmexpansion.temperature_unit.usage2": "非正常温度环境中每秒消耗%sFE来恒温",
+  "tooltip.dcmexpansion.temperature_unit.usage3": "待机时每秒消耗%sFE",
 
   "message.dcmexpansion.cb_outofuse": "这块电池已经没有任何充能了",
   "message.dcmexpansion.horde_disable_pocket_block": "检测到有尸潮发生，已开启隔离",
@@ -79,8 +84,23 @@
   "message.dcmexpansion.weather.direction.west": "西",
   "message.dcmexpansion.weather.direction.east": "东",
 
+  "message.dcmexpansion.normal_day": "[第%s天] 又是平常的一天……",
+  "message.dcmexpansion.grace_day": "[第%s天] 今天似乎是个美妙又安静的好日子……",
+
   "curios.identifier.unit": "单元插件",
   "curios.identifier.bpvest": "防弹衣",
+
+  "death.attack.hazard_gas": "%s吸入了过多致命气体",
+  "death.attack.hazard_gas.player": "%s在与%s的战斗过程中吸入了过多致命气体",
+
+  "desc.immersiveengineering.info.blueprint.tech_comp": "科技组件",
+  "desc.immersiveengineering.info.blueprint.advanced_tech_comp": "先进科技组件",
+  "desc.immersiveengineering.info.blueprint.chemical": "化学",
+  "desc.immersiveengineering.info.blueprint.advanced_chemical": "先进化学",
+  "desc.immersiveengineering.info.blueprint.advanced_ammunition": "先进弹药",
+  "desc.immersiveengineering.info.blueprint.advanced_armor": "先进护甲",
+  "desc.immersiveengineering.info.blueprint.tech_melee": "科学近战",
+  "desc.immersiveengineering.info.blueprint.backpack_chip": "背包插件",
 
   "config.dcmexpansion.firstAidKitHP": "急救包|治疗百分比",
   "config.dcmexpansion.modernMedkitHP": "现代化急救包|治疗百分比",

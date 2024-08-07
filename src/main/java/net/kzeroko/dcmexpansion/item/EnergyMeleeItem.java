@@ -48,4 +48,8 @@ public class EnergyMeleeItem extends ItemEnergized {
         boolean isValid = energyContainer != null && !energy.isZero() && !energy.smallerThan(hitCost);
         return slot == EquipmentSlot.MAINHAND ? (isValid ? attributesOn : attributesOff) : super.getAttributeModifiers(slot, stack);
     }
+
+    public int getCostOnHit() {
+        return this.costOnHit;
+    }
 }

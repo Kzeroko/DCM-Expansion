@@ -38,7 +38,9 @@ public abstract class EntityKineticBulletMixin extends Projectile {
     @Unique
     private void dcmexpansion$handleVestDamage(Player player, TacHitResult result, CallbackInfo ci) {
         @NotNull CurioItem[] vests = {TaczItems.BP_VEST_LIGHT.get(), TaczItems.BP_VEST_MEDIUM.get()};
-        float[] damageFactors = {0.1F, 0.01F};
+        float[] damageFactors = {0.05F, 0.005F};
+
+        // TODO: Handles damage factor based on projectile property, which is not static
 
         for (int i = 0; i < vests.length; i++) {
             if (vests[i].isEquippedBy(player)) {

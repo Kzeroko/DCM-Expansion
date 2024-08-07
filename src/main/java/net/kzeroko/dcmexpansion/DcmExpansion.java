@@ -2,6 +2,9 @@ package net.kzeroko.dcmexpansion;
 
 import com.mojang.logging.LogUtils;
 import net.kzeroko.dcmexpansion.config.DcmExpansionConfig;
+import net.kzeroko.dcmexpansion.internal.DcmDamageBuilder;
+import net.kzeroko.dcmexpansion.internal.DcmDamageSources;
+import net.kzeroko.dcmexpansion.internal.event.GracetimeMessage;
 import net.kzeroko.dcmexpansion.network.DcmNetworkHandler;
 import net.kzeroko.dcmexpansion.registry.*;
 import net.kzeroko.dcmexpansion.registry.modintegration.*;
@@ -36,6 +39,8 @@ public class DcmExpansion {
     public static final String MOD_ID = "dcmexpansion";
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final Logger MOD_LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+    // Creative tab
     public static final CreativeModeTab INTEGRATION = new CreativeModeTab(MOD_ID + "." + "modIntegrationItems") {
         public @NotNull ItemStack makeIcon() {
             return new ItemStack(DcmIntegrationItems.SCREEN_COMPONENT.get());
@@ -57,8 +62,12 @@ public class DcmExpansion {
         }
     };
 
+    // Curio icon identifier
     private static final ResourceLocation CURIOS_ICON_UNIT = new ResourceLocation("curios:slot/unit");
     private static final ResourceLocation CURIOS_ICON_BPVEST = new ResourceLocation("curios:slot/bpvest");
+
+    // Event class
+    public static final GracetimeMessage gracetimeMessage = new GracetimeMessage();
 
     public DcmExpansion() {
         MinecraftForge.EVENT_BUS.register(this);
@@ -71,6 +80,8 @@ public class DcmExpansion {
         eventBus.addListener(this::processIMC);
 
         eventBus.addGenericListener(Item.class, this::registerFirstAidItems);
+
+        DcmDamageSources.init();
 
         DcmSounds.REGISTER.register(eventBus);
         DcmHealingItems.REGISTER.register(eventBus);
@@ -105,6 +116,10 @@ public class DcmExpansion {
 
     private void setup(final FMLCommonSetupEvent event) {
         DcmNetworkHandler.register();
+        DcmDamageBuilder.register();
+
+        MinecraftForge.EVENT_BUS.register(gracetimeMessage);
+
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {

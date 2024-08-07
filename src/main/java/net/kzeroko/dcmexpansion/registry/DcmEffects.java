@@ -1,9 +1,7 @@
 package net.kzeroko.dcmexpansion.registry;
 
 import net.kzeroko.dcmexpansion.DcmExpansion;
-import net.kzeroko.dcmexpansion.effect.AntiInfectionEffect;
-import net.kzeroko.dcmexpansion.effect.ElectrifiedEffect;
-import net.kzeroko.dcmexpansion.effect.FastHealEffect;
+import net.kzeroko.dcmexpansion.effect.*;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -14,5 +12,7 @@ public class DcmEffects {
     public static RegistryObject<MobEffect> ANTI_INFECTION = REGISTER.register("anti_infection", AntiInfectionEffect::new);
     public static RegistryObject<MobEffect> FAST_HEAL = REGISTER.register("fast_heal", FastHealEffect::new);
     public static RegistryObject<MobEffect> ELECTRIFIED = REGISTER.register("electrified", ElectrifiedEffect::new);
+    public static RegistryObject<MobEffect> HAZARD_GAS = REGISTER.register("hazard_gas", HazardGasEffect::new);
+    public static RegistryObject<MobEffect> HAZARD_GRACE = REGISTER.register("hazard_grace", HazardGraceEffect::new);
 
 }

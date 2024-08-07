@@ -17,10 +17,8 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class StunRod extends EnergyMeleeItem {
-    private final int costOnHit;
     public StunRod(double chargeRate, double capacity, int costOnHit, int pAttackDamageModifier, float pAttackSpeedModifier) {
         super(chargeRate, capacity, pAttackDamageModifier, costOnHit, pAttackSpeedModifier);
-        this.costOnHit = costOnHit;
     }
 
     @Override
@@ -29,7 +27,7 @@ public class StunRod extends EnergyMeleeItem {
 
             IEnergyContainer energyContainer = StorageUtils.getEnergyContainer(stack, 0);
             FloatingLong energy = energyContainer == null ? FloatingLong.ZERO : energyContainer.getEnergy();
-            FloatingLong energyCost = FloatingLong.create(EnergyUtil.convertEnergy(costOnHit, EnergyUtil.Type.FE, EnergyUtil.Type.J));
+            FloatingLong energyCost = FloatingLong.create(EnergyUtil.convertEnergy(getCostOnHit(), EnergyUtil.Type.FE, EnergyUtil.Type.J));
 
             if (energyContainer != null && !energy.isZero() && !energy.smallerThan(energyCost)) {
                 if (target.getMaxHealth() < 500.0F

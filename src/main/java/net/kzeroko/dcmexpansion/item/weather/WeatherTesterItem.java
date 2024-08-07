@@ -143,7 +143,7 @@ public class WeatherTesterItem extends ItemEnergized {
                     int cooldownSeconds = CooldownUtil.getCooldownSeconds(player, this);
                     boolean isReady = cooldownSeconds == 0;
                     text.add(new TranslatableComponent("tooltip.dcmexpansion.weather_tester.cooldown")
-                            .append(new TextComponent(isReady ? ("READY") : (cooldownSeconds + "S"))
+                            .append(new TextComponent(isReady ? (" READY") : (" " + cooldownSeconds + "S"))
                                     .withStyle(isReady ? ChatFormatting.GREEN : ChatFormatting.AQUA)));
                 }
             }
@@ -152,8 +152,8 @@ public class WeatherTesterItem extends ItemEnergized {
         text.add(new TranslatableComponent("tooltip.dcmexpansion.weather_tester.range")
                 .append(new TextComponent(String.valueOf(scanDistance)).withStyle(ChatFormatting.YELLOW)));
         text.add(TextComponent.EMPTY);
-        text.add(new TranslatableComponent("tooltip.dcmexpansion.weather_tester.usage1"));
-        text.add(new TranslatableComponent("tooltip.dcmexpansion.weather_tester.usage2"));
+        text.add(new TranslatableComponent("tooltip.dcmexpansion.weather_tester.usage1").withStyle(ChatFormatting.GRAY));
+        text.add(new TranslatableComponent("tooltip.dcmexpansion.weather_tester.usage2").withStyle(ChatFormatting.GRAY));
 
 
     }

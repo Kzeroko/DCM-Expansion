@@ -10,10 +10,20 @@ import mekanism.api.math.FloatingLong;
 import mekanism.common.util.StorageUtils;
 import net.kzeroko.dcmexpansion.item.EnergyCurioItem;
 import net.kzeroko.dcmexpansion.util.EnergyUtil;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.SlotContext;
+
+import java.util.List;
 
 public class TemperatureUnit extends EnergyCurioItem {
     private final int costSec;
@@ -97,6 +107,15 @@ public class TemperatureUnit extends EnergyCurioItem {
             }
 
         }
+    }
+
+    @Override
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> text, @NotNull TooltipFlag pIsAdvanced) {
+        super.appendHoverText(pStack, pLevel, text, pIsAdvanced);
+        text.add(TextComponent.EMPTY);
+        text.add(new TranslatableComponent("tooltip.dcmexpansion.temperature_unit.usage1").withStyle(ChatFormatting.GRAY));
+        text.add(new TranslatableComponent("tooltip.dcmexpansion.temperature_unit.usage2", costSec).withStyle(ChatFormatting.GRAY));
+        text.add(new TranslatableComponent("tooltip.dcmexpansion.temperature_unit.usage3", costSec / 2).withStyle(ChatFormatting.GRAY));
     }
 
     private double toCelsius(double mcTemp) {

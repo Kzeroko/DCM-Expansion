@@ -42,6 +42,8 @@
   "effect.dcmexpansion.anti_infection": "Anti-Infection",
   "effect.dcmexpansion.fast_heal": "Fast Heal",
   "effect.dcmexpansion.electrified": "Electrified",
+  "effect.dcmexpansion.hazard_gas": "Hazard Gas",
+  "effect.dcmexpansion.hazard_grace": "Hazard Grace",
 
   "itemGroup.dcmexpansion.healingItems": "DCM Expansion-Healing",
   "itemGroup.dcmexpansion.modIntegrationItems": "DCM Expansion-Mod Integrations",
@@ -55,10 +57,13 @@
   "tooltip.dcmexpansion.compressed_battery": "Shift+RightClick charges the tablet in offhand",
   "tooltip.dcmexpansion.compressed_battery_amount": "%s/5 uses left",
   "tooltip.dcmexpansion.compressed_battery_amount_na": "5/5 uses left",
-  "tooltip.dcmexpansion.weather_tester.cooldown": "Next scan in ",
+  "tooltip.dcmexpansion.weather_tester.cooldown": "Next scan in",
   "tooltip.dcmexpansion.weather_tester.range": "Range: ",
   "tooltip.dcmexpansion.weather_tester.usage1": "Direct usage to get all weather data",
   "tooltip.dcmexpansion.weather_tester.usage2": "SHIFT usage to get hazard weather data",
+  "tooltip.dcmexpansion.temperature_unit.usage1": "Automatic body temperature preservation unit device",
+  "tooltip.dcmexpansion.temperature_unit.usage2": "Costs %sFE every second when in abnormal environment",
+  "tooltip.dcmexpansion.temperature_unit.usage3": "Costs %sFE every second when idle",
 
   "message.dcmexpansion.cb_outofuse": "This battery has no charges left",
   "message.dcmexpansion.horde_disable_pocket_block": "Horde invasion detected, quarantine activated",
@@ -79,8 +84,23 @@
   "message.dcmexpansion.weather.direction.west": "West",
   "message.dcmexpansion.weather.direction.east": "East",
 
+  "message.dcmexpansion.normal_day": "[Day%s] A typical start of a day...",
+  "message.dcmexpansion.grace_day": "[Day%s] Today seems peaceful and quiet...",
+
   "curios.identifier.unit": "Unit Module",
   "curios.identifier.bpvest": "Bullet-Proof Vest",
+
+  "death.attack.hazard_gas": "%s breathed in too much hazard gas",
+  "death.attack.hazard_gas.player": "%s breathed in too much hazard gas while fighting %s",
+
+  "desc.immersiveengineering.info.blueprint.tech_comp": "Tech Components",
+  "desc.immersiveengineering.info.blueprint.advanced_tech_comp": "Advanced Tech Components",
+  "desc.immersiveengineering.info.blueprint.chemical": "Chemical",
+  "desc.immersiveengineering.info.blueprint.advanced_chemical": "Advanced Chemical",
+  "desc.immersiveengineering.info.blueprint.advanced_ammunition": "Advanced Ammunition",
+  "desc.immersiveengineering.info.blueprint.advanced_armor": "Advanced Armor",
+  "desc.immersiveengineering.info.blueprint.tech_melee": "Tech Melee",
+  "desc.immersiveengineering.info.blueprint.backpack_chip": "Backpack Chip",
 
   "config.dcmexpansion.firstAidKitHP": "First-Aid Kit|Heal percentage",
   "config.dcmexpansion.modernMedkitHP": "Modern Medical Device|Heal percentage",

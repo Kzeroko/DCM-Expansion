@@ -53,6 +53,7 @@ public interface ICurioRenderable {
         LivingEntity entity = slotContext.entity();
 
         model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+
         model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
 
         ICurioRenderer.followBodyRotations(entity, model);

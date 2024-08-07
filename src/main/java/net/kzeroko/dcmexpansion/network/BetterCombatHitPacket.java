@@ -106,8 +106,8 @@ public class BetterCombatHitPacket {
                         float fa = 0.4F;
                         float fb = 0.4F;
                         float fc = 0.0F;
-                        float wdEquation = fa * Mth.square(normalizedDamage) + fb * normalizedDamage + fc;
-                        float wdFactor = Mth.clamp(wdEquation, 0.0F, 0.8F);
+                        float wdResult = fa * Mth.square(normalizedDamage) + fb * normalizedDamage + fc;
+                        float wdFactor = Mth.clamp(wdResult, 0.0F, 0.8F);
 
                         float finalDamage = maxHealth * (baseFactor + wdFactor);
 

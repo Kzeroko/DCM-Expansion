@@ -10,6 +10,9 @@
     "common.LivingEntityMixin",
     "common.MobMixin",
     "common.firstaid.FirstAidRegistryImplMixin",
+    "common.ie.BlueprintCraftingRecipeMixin",
+    "common.ie.WireDamageHandlerMixin",
+    "common.scpdtj.MessageWhenJoinedProcedureMixin",
     "common.securitycraft.BlockPocketWallBlockMixin",
     "common.tacz.EntityKineticBulletMixin"
   ],
